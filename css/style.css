@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900');
+  
+body{
+     font-family: 'Montserrat', sans-serif;
+ }
+
+ :root {
+--stghcs-blue-one: #172441;
+--stghcs-yellow-one: #FFFF66;
+
+/*heights*/
+}
+
+ .main_wrapper_genevive{
+     position:absolute;
+     width:100%;
+     min-height:100%;
+     background:#EEEEEE;
+     
+ }
+ .main_wrapper_genevive .top_bar{
+     width:100%;
+     height:auto;
+     background:white;
+     padding: 12px;
+     box-sizing:border-box;
+ }
+ .main_wrapper_genevive .top_bar img{
+     width:200px;
+ }
+ 
+ 
+ /*buttons*/
+ .stghcs_button_001_blue{
+     width:auto;
+     padding:10px 20px 10px 20px;
+     background:var(--stghcs-blue-one);
+     color:white;
+     border-radius: 5px;
+     text-transform: uppercase;
+     font-size:13px;
+ }
+ 
+ .stghcs_button_001_white{
+     width:auto;
+     padding:10px 20px 10px 20px;
+     background:white;
+     color:var(--stghcs-blue-one);
+     border-radius: 5px;
+     text-transform: uppercase;
+     font-size:13px;
+ }
+ 
+ .stghcs_button_002_white{
+     width:auto;
+     padding:10px 20px 10px 20px;
+     background:white;
+     color:var(--stghcs-blue-one);
+     text-transform: uppercase;
+     font-size:13px;
+ }
+ 
+ /*button behaviours*/
+ .desktop_menu_item{
+     display:inline-block;
+     cursor:pointer;
+ }
+ .mobile_menu_toggle{
+     display:none;
+     cursor:pointer;
+ }
+ 
+ 
+ /*mobile menu*/
+ .stghcs_mobile_menu{
+     position:absolute;
+     display:none;
+     right:0;
+     top:0;
+     width:320px;
+     height:100%;
+     background:white;
+     color: var(--stghcs-blue-one);
+     border:solid 0 var(--stghcs-blue-one);
+     border-left:solid 1px;
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+ .mobile_menu_top_bar{
+     width:100%;
+ }
+ #close_stghcs_mobile_menu, #open_stghcs_mobile_menu{
+     font-size:20px;
+ }
+ 
+ @media (max-width:700px){
+     .desktop_menu_item{
+      display:none;   
+     }
+     .mobile_menu_toggle{
+     display:inline-block;
+     }
+ }
+ 
+ @media (max-width:420px){
+     .stghcs_mobile_menu{
+         width:100%;
+     }
+ }
