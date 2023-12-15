@@ -1,0 +1,163 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/ba85401cc4.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async></script>
+
+
+    <title>Login</title>
+   
+    <style>
+        .login_area{
+            position:relative;
+            display:block;
+            width:500px;
+            height:auto;
+            min-height:300px;
+            background:white;
+            padding:30px;
+            margin:auto;
+            border:solid 1px var(--stghcs-blue-pale);
+            box-sizing:border-box;
+        }
+        .google_button{
+        width:100%;
+        padding:10px 20px 10px 20px;
+        background:white;
+        color:var(--stghcs-blue-one);
+        border:1px solid var(--stghcs-blue-pale);
+        border-radius: 5px;
+        font-size:13px;
+        cursor:pointer;
+        display:inline-block;
+        margin:0 auto;
+        font-weight:600;
+        }
+        #login_logo{
+            display:block;
+            margin:0 auto;
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+        .password_area{
+            position:relative;
+        }
+        .view_password{
+            position:absolute;
+            top:50%;
+            right:10px;
+        }
+        @media (max-width:650px){
+            .login_area{
+            width:90%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="main_wrapper_genevive">
+        <img id ="login_logo" src="https://lavenduct.com/stghs/assets/St_Genevive_Logo.svg">
+        <div class="login_area">
+        <h2 class="fw-bold">Sign In</h2>
+        <h6 class="fw-normal">Don’t have an account? Sign up</h6>
+        
+          <div class="form-group mt-4">
+         <div class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left">
+    </div>
+        </div>  
+          <form action="#">
+        <div class="form-group mt-4">
+        <label for="email" >Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+         </div> 
+         
+         <div class="form-group mt-2 password_area">
+         <label for="email" >Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password">
+        <i class="fa-regular fa-eye view_password" id="view_password"></i>
+        </div>
+        
+        <div class="form-group mt-2">
+            <button type="submit" class='stghcs_button_003_blue w-100' id="sign_in">Sign In</button></div>
+            </form>
+         
+        </div>
+       
+    </div>
+    
+    <script>
+    
+        var togglePassword = document.getElementById('view_password');
+        var password = document.getElementById('password');
+        var email = document.getElementById('email');
+        var signIn = document.getElementById('sign_in');
+        
+        //toggle password
+        togglePassword.addEventListener("submit", function(){
+            var attr = password.getAttribute("type");
+            if(attr == "password"){
+             password.setAttribute('type', 'text');
+             togglePassword.classList.remove('fa-eye');
+             togglePassword.classList.add('fa-eye-slash');
+            }else{
+               password.setAttribute('type', 'password');
+               togglePassword.classList.remove('fa-eye-slash');
+                togglePassword.classList.add('fa-eye');
+            }
+        });
+        
+        
+    //validate email
+    function validateSignIn() {
+    var eVal = email.value.trim();
+    var pVal = password.value.trim();
+    
+    
+    //validate for empty char
+    if (!eVal && !pVal) {
+    event.preventDefault();
+    alert("Email and Password are empty");
+    } else if (!eVal) {
+    alert("Email is empty");
+    event.preventDefault();
+    } else if (!pVal) {
+    alert("Password is empty");
+    event.preventDefault();
+    } else if(pVal.length < 6){
+    alert("Password is too short");
+    event.preventDefault();   
+        }else {
+        
+        if(isValidEmail(eVal)){
+        console.log("Pushing to backend!");
+        } else {
+        alert("Invalid email address");
+        event.preventDefault();
+        }
+  }
+  
+  //validate for empty char
+  
+}
+    function isValidEmail(email) {
+    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailRegex.test(email);
+    }
+
+    signIn.addEventListener("click", function(){
+        validateSignIn();
+    });
+    </script>
+
+    
+</body>

@@ -1,0 +1,113 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/ba85401cc4.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+
+    <title>Verify Email</title>
+    
+    <style>
+        .verify_email{
+            position:relative;
+            display:block;
+            top:50px;
+            width:500px;
+            height:auto;
+            min-height:300px;
+            background:white;
+            padding:30px;
+            margin:auto;
+            border:solid 1px var(--stghcs-blue-pale);
+            box-sizing:border-box;
+        }
+        .verify_button{
+        width:auto;
+        padding:10px 20px 10px 20px;
+        background:white;
+        color:var(--stghcs-blue-one);
+        border:1px solid var(--stghcs-blue-pale);
+        border-radius: 5px;
+        font-size:13px;
+        cursor:pointer;
+        display:inline-block;
+        margin:0 auto;
+        }
+        hr{
+            border:solid 1px var(--stghcs-blue-pale);
+        }
+        #email_resent_message{
+            display:none;
+        }
+        @media (max-width:650px){
+            .verify_email{
+            top:50px;
+            width:90%;
+        }
+        @media (max-width: 350px) {
+        .status_message {
+        font-size: 12px; /* Adjust the font size for smaller screens */
+        }
+        }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="main_wrapper_genevive">
+     <div class="verify_email" id="verify_email">
+         <div class="row" id="verify_account">
+             <div class="col-12 mt-4 display-6 text-center fw-light">
+                 Hello <span id="userfirstname">Jamal</span>,
+             </div>
+             <div class="col-12 mt-1 h4 text-center fw-bold">
+                 Please verify your Account.
+             </div>
+             <div class="col-12 h6 text-center fw-normal status_message">
+                 We sent a verification email to your<br>registered mail address.
+             </div>
+             <div class="col-12 text-center mt-2 mb-2">
+        <img style="height:100px" src="https://lavenduct.com/stghs/assets/placeholder_one.png">
+        </div>
+        <hr class="mt-4">
+        <div class="col-12 h6 text-center fw-normal">
+                 <small class="text-muted status_message">Verified your account? <strong>Click Here</strong></small>
+             </div>
+        <div class="verify_button mt-3 text-center text-capitalize" id="resend_email">Resend verification email</div>
+         </div>
+         
+     </div>   
+    </div>
+        
+   <!--RESEND EMAIL MESSAGE-->
+        <div id="email_resent_message" class="mt-5 text-center">
+        <img style="height:100px" src="https://lavenduct.com/stghs/assets/mail.png">
+        <div class="col-12 mt-1 h4 text-center fw-bold">
+                 Check your mail
+             </div>
+        <div class="col-12 h6 text-center fw-normal status_message">
+                 We just sent a fresh link to your<br>registered address. 
+             </div>
+        </div>
+         <!--RESEND EMAIL MESSAGE END-->
+    
+    
+    
+    <script src="js/transitions.js"></script>
+    <script>
+        var resendEmail = document.getElementById("resend_email");
+        resendEmail.addEventListener("click", function(){
+            createTransition("verify_email",displayResentEmail, "swiper");
+        });
+        
+        function displayResentEmail(targetId){
+        document.getElementById("verify_account").innerHTML="";
+        var target = document.getElementById(targetId);
+        var message = document.getElementById("email_resent_message");
+        message.style.display = "block";
+        target.appendChild(message);
+        }
+    </script>
+</body>
