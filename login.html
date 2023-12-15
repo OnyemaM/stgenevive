@@ -50,10 +50,15 @@
             position:absolute;
             top:50%;
             right:10px;
+            color:var(--stghcs-blue-one)
         }
         @media (max-width:650px){
             .login_area{
             width:90%;
+            }
+            #login_logo{
+            padding-top:50px;
+            padding-bottom:30px;
         }
         }
     </style>
@@ -96,67 +101,64 @@
     </div>
     
     <script>
-    
-        var togglePassword = document.getElementById('view_password');
-        var password = document.getElementById('password');
-        var email = document.getElementById('email');
-        var signIn = document.getElementById('sign_in');
-        
-        //toggle password
-        togglePassword.addEventListener("submit", function(){
-            var attr = password.getAttribute("type");
-            if(attr == "password"){
-             password.setAttribute('type', 'text');
-             togglePassword.classList.remove('fa-eye');
-             togglePassword.classList.add('fa-eye-slash');
-            }else{
-               password.setAttribute('type', 'password');
-               togglePassword.classList.remove('fa-eye-slash');
-                togglePassword.classList.add('fa-eye');
-            }
-        });
-        
-        
-    //validate email
-    function validateSignIn() {
+    var togglePassword = document.getElementById('view_password');
+var password = document.getElementById('password');
+var email = document.getElementById('email');
+var signIn = document.getElementById('sign_in');
+
+// Toggle password visibility
+togglePassword.addEventListener("click", function () {
+    var attr = password.getAttribute("type");
+    if (attr === "password") {
+        password.setAttribute('type', 'text');
+        togglePassword.classList.remove('fa-eye');
+        togglePassword.classList.add('fa-eye-slash');
+    } else {
+        password.setAttribute('type', 'password');
+        togglePassword.classList.remove('fa-eye-slash');
+        togglePassword.classList.add('fa-eye');
+    }
+});
+
+// Validate email
+function validateSignIn(event) {
     var eVal = email.value.trim();
     var pVal = password.value.trim();
-    
-    
-    //validate for empty char
+
+    // Validate for empty char
     if (!eVal && !pVal) {
-    event.preventDefault();
-    alert("Email and Password are empty");
-    } else if (!eVal) {
-    alert("Email is empty");
-    event.preventDefault();
-    } else if (!pVal) {
-    alert("Password is empty");
-    event.preventDefault();
-    } else if(pVal.length < 6){
-    alert("Password is too short");
-    event.preventDefault();   
-        }else {
-        
-        if(isValidEmail(eVal)){
-        console.log("Pushing to backend!");
-        } else {
-        alert("Invalid email address");
         event.preventDefault();
+        alert("Email and Password are empty");
+    } else if (!eVal) {
+        alert("Email is empty");
+        event.preventDefault();
+    } else if (!pVal) {
+        alert("Password is empty");
+        event.preventDefault();
+    } else if (pVal.length < 6) {
+        alert("Password is too short");
+        event.preventDefault();
+    } else {
+        if (isValidEmail(eVal)) {
+            console.log("Pushing to backend!");
+        } else {
+            alert("Invalid email address");
+            event.preventDefault();
         }
-  }
-  
-  //validate for empty char
-  
+    }
 }
-    function isValidEmail(email) {
+
+// Validate email function
+function isValidEmail(email) {
     var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return emailRegex.test(email);
-    }
+}
 
-    signIn.addEventListener("click", function(){
-        validateSignIn();
-    });
+// Event listener for sign-in button
+signIn.addEventListener("click", function (event) {
+    validateSignIn(event);
+});
+
     </script>
 
     

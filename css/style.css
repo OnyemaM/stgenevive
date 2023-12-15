@@ -2,8 +2,11 @@
   
 body{
      font-family: 'Montserrat', sans-serif;
+     color: var(--stghcs-blue-one);
  }
-
+ label{
+     font-size:13px;
+ }
  :root {
 --stghcs-blue-one: #172441;
 --stghcs-yellow-one: #FFFF66;
@@ -39,6 +42,7 @@ body{
      border-radius: 5px;
      text-transform: uppercase;
      font-size:13px;
+     cursor:pointer;
  }
  
  .stghcs_button_001_white{
@@ -49,6 +53,7 @@ body{
      border-radius: 5px;
      text-transform: uppercase;
      font-size:13px;
+     cursor:pointer;
  }
  
  .stghcs_button_002_white{
@@ -58,6 +63,26 @@ body{
      color:var(--stghcs-blue-one);
      text-transform: uppercase;
      font-size:13px;
+     cursor:pointer;
+ }
+ 
+ .stghcs_button_003_blue, .stghcs_button_003_white{
+     position:relative;
+     display:inline-block;
+     width:auto;
+     padding:10px 30px 10px 30px;
+     background:var(--stghcs-blue-one);
+     color:white;
+     font-size:16px;
+     font-weight:500;
+     border-radius:3px;
+     cursor:pointer;
+     margin-top:10px;
+ }
+ .stghcs_button_003_white{
+     background:white;
+     color:var(--stghcs-blue-one);
+     border:0.5px solid var(--stghcs-blue-one);
  }
  
  /*button behaviours*/
@@ -92,6 +117,151 @@ body{
      font-size:20px;
  }
  
+ /*onboard*/
+ #stghcs_logo_mobile{
+     display:none;
+     position:relative;
+     margin:0 auto;
+ }
+ .stghcs_onboard_section_left{
+     position:absolute;
+     display:block;
+     width:30%;
+     height:100%;
+     background: var(--stghcs-blue-one);
+     background-image: url("https://lavenduct.com/stghs/assets/team.jpg");
+     background-repeat:no-repeat;
+     background-size:cover;
+     background-position:center;
+ }
+ .stghcs_onboard_section_right{
+     position:absolute;
+     display:inline-block;
+     width:70%;
+     height:100%;
+     right:0;
+     overflow-y:scroll;
+     padding-bottom:50px;
+ }
+ .onboard_section_right_inner{
+     max-width:70%;
+     height:auto;
+     padding:20px 20px 5px 40px;
+ }
+ .stghcs_text_one{
+     font-size:2.5vw;
+     font-weight:600;
+     line-height:1.2;
+     color:var(--stghcs-blue-one);
+ }
+ .stghcs_text_two{
+     font-size:1.5vw;
+     font-weight:400;
+     line-height:1.2;
+     color:var(--stghcs-blue-one);
+ }
+ .stghcs_nowrap{
+     white-space: nowrap
+ }
+ .stghcs_top_margin{
+     margin-top:50px;
+ }
+ .stghcs_top_margin_half{
+     margin-top:25px;
+ }
+ 
+ @media (max-width: 1150px){
+     .onboard_section_right_inner{
+         max-width:80%;
+     }
+ }
+ 
+ @media (max-width: 1050px){
+     .onboard_section_right_inner{
+     padding:10px 10px 10px 30px;
+ }
+     .onboard_section_right_inner{
+         max-width:70%;
+     }
+     .stghcs_text_one{
+     font-size:30px;
+     font-weight:700;
+ }
+ .stghcs_text_two{
+     font-size:18px;
+     font-weight:400;
+     line-height:1.2;
+     color:var(--stghcs-blue-one);
+ }
+ 
+ }
+ 
+ @media (max-width:850px){
+     .onboard_section_right_inner{
+         max-width:80%;
+     }
+ }
+ 
+ @media (max-width:767px){
+     .onboard_section_right_inner{
+         max-width:90%;
+     }
+     .stghcs_button_003_blue{
+         width:100%;
+         text-align:center;
+     }
+     .stghcs_button_003_white{
+         width:100%;
+         text-align:center;
+     }
+     
+ }
+     
+ @media (max-width:680px){
+     .onboard_section_right_inner{
+         max-width:100%;
+     }
+ }
+ 
+ /*onborad mobile*/   
+ @media (max-width:650px){
+     #stghcs_logo_mobile{
+         display:block;
+     }
+     #stghcs_logo{
+         display:none;
+     }
+     .stghcs_onboard_section_left{
+         width:100%;
+         height:100%;
+     }
+     .stghcs_onboard_section_right{
+         width:90%;
+         left:5%;
+         background:white;
+         top:60px;
+         height:auto;
+         padding-bottom:40px;
+     }
+     .onboard_section_right_inner{
+         padding:5px 20px 5px 20px;
+     }
+     .stghcs_text_one, .stghcs_text_two{
+         text-align:center;
+         padding:0 20px;
+     }
+     .stghcs_text_one{
+         font-size:5.5vw;
+     }
+     .stghcs_text_two{
+         font-size:3.5vw;
+     }
+     .stghcs_text_three{
+         font-size:3vw;
+         color: var(--stghcs-blue-one);
+     }
+ } 
+ 
  @media (max-width:700px){
      .desktop_menu_item{
       display:none;   
@@ -106,3 +276,4 @@ body{
          width:100%;
      }
  }
+ 
