@@ -7,6 +7,15 @@ body{
  label{
      font-size:13px;
  }
+ a{
+     user-select: none;
+     -webkit-tap-highlight-color: transparent;
+     cursor: pointer; 
+ }
+ a:visited {
+  color: inherit; 
+ }
+ 
  :root {
 --stghcs-blue-one: #172441;
 --stghcs-yellow-one: #FFFF66;
@@ -35,7 +44,9 @@ border:solid 1px var(--stghcs-blue-one) !important;
 .form-control::-ms-input-placeholder { /* Microsoft Edge */
          color: #bbb;
 }
-
+.dropdown-menu{
+ min-width:14rem;
+}
 
 
 /*--*/  
@@ -116,6 +127,7 @@ border:solid 1px var(--stghcs-blue-one) !important;
  
  /*button behaviours*/
  .desktop_menu_item{
+     position:relative;
      display:inline-block;
      cursor:pointer;
  }
@@ -123,7 +135,6 @@ border:solid 1px var(--stghcs-blue-one) !important;
      display:none;
      cursor:pointer;
  }
- 
  
  /*mobile menu*/
  .stghcs_mobile_menu{
