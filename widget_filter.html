@@ -1,0 +1,188 @@
+<style>
+    .search_area{
+        width:100%;
+        padding:15px 3%;
+        background:white;
+        border-top: 1px solid rgba(0, 0, 0, 0.20);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    }
+
+/*filter widget*/
+.filter_widget_area{
+    width:100%;
+    height:auto;
+    border-bottom: 1px solid #172441;
+    padding:30px;
+}
+.filter_widget_jobs_search_area{
+    position:relative;
+    height:30px;
+}
+.filter_widget_icon{
+    position:absolute;
+    width:30px;
+    height:30px;
+    font-size:13px;
+    display:inline;
+    top:7px;
+    
+}
+.filter_widget_select_area{
+    display:inline;
+    white-space: nowrap;
+}
+.filter_widget_select{
+    display:inline;
+    border:none !important;
+    color:var(--stghcs-blue-one);
+    border:none !important;
+    border-bottom:1px solid var(--stghcs-blue-one) !important;
+    border-radius:0;
+    padding:4px 25px;
+    font-weight:600;
+    color: var(--stghcs-blue-one);
+    width:200px;
+    
+}
+.search_widget_field{
+    width:100%;
+    height:auto;
+}
+
+/*Search Widget*/
+.search_widget_container{
+    position:relative;
+    max-width:500px;
+    height:auto;
+}
+.search_widget_field{
+    position:relative;
+    width:100%;
+    height:30px;
+    border: 0.5px solid #CECECE;
+    background: #FFFFFF;
+    padding:10px 10px;
+    font-size:14px;
+    font-weight:400;
+    color:var(--stghcs-blue-one);
+}
+.search_widget_field:focus {
+outline: 2px solid #dddddd; 
+}
+.search_widget_btn{
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border: 0.5px solid #ddda0f;
+    background: var(--stghcs-yellow-one);
+    position:absolute;
+    top:0;
+    right:0;
+    color:var(--stghcs-blue-one);
+    font-size:13px;
+}
+.search_widget_closer{
+    position:relative;
+    display:none;
+    right:2.5%;
+    width:30px;
+    height: 30px;
+    color:#ccc;
+    font-size:20px;
+    border:none;
+    background:none;
+}
+@media (max-width:800px){
+    #find_opportunitites{
+        display:none;
+    }
+    .filter_widget_select{
+       border:0 !important; 
+    }
+}
+@media (max-width:450px){
+    .search_widget_closer{
+        left:-12px;
+        font-size:16px;
+    }
+}
+</style>
+
+<div class="search_area" id="search_area">
+    <div class="row">
+        <div class="col d-flex justify-content-start" id="filter_widget_column">
+            <div class="filter_widget_jobs_search_area" id="filter_widget_area">
+    <div class="filter_widget_select_area">
+        <span class="me-2 small fw-normal" id="find_opportunitites">Find opportunities in</span> 
+        <span class="filter_widget_icon"><i class="fa-solid fa-location-dot"></i> </span>
+    <select class="form-select form-select-sm filter_widget_select" id="filter_select">
+    <option selected>Choose Location</option>
+    <option value="1">Baton Rouge</option>
+    <option value="2">New Orleans</option>
+    <option value="3">Shreveport</option>
+    <option value="3">Long Name Island</option>
+    </select>
+    </div>
+    
+        </div>
+        </div>
+        <div class="col d-flex justify-content-end" id="search_widget_column">
+            <div class="search_widget_container" id="search_widget">
+    <input type="text" class="search_widget_field" id="search_field" placeholder="Search"><button class="search_widget_btn" id="search_widget_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div><button class="search_widget_closer" id="search_widget_closer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+</div>
+
+<script>
+var searchArea = document.getElementById("search_area");
+var searchWidget = document.getElementById("search_widget");
+var searchWidgetColumn = document.getElementById("search_widget_column");
+var filterWidgetColumn = document.getElementById("filter_widget_column");
+var searchWidgetCloser = document.getElementById("search_widget_closer");
+var searchWidgetSubmit = document.getElementById("search_widget_btn");
+var searchField = document.getElementById("search_field");
+searchWidget.addEventListener("click", triggerSearch);
+searchWidgetCloser.addEventListener("click", deTriggerSearch);
+searchWidgetSubmit.addEventListener("click", submitSearch);
+
+
+function triggerSearch(){
+    searchArea.style.backgroundColor ="white";
+    searchWidgetColumn.style.backgroundColor ="white";
+    searchWidgetColumn.style.position = "absolute";
+    searchWidgetColumn.style.height = "30px";
+    searchWidgetColumn.classList.remove('d-flex');
+    searchWidgetColumn.classList.remove('justify-content-end');
+    searchWidgetColumn.style.width ="100%";
+    searchWidget.style.maxWidth ="90%";
+    searchWidget.style.left ="5%";
+    searchWidgetCloser.style.top ="-30px";
+    searchWidgetCloser.style.display ="block";
+    
+    
+}
+
+function deTriggerSearch(){
+    searchWidgetColumn.style.position = "relative";
+    searchWidgetColumn.style.height = "auto";
+    searchWidgetColumn.classList.add('d-flex');
+    searchWidgetColumn.classList.add('justify-content-end');
+    searchWidgetColumn.style.width ="auto";
+    searchWidget.style.width ="90%";
+    searchWidgetCloser.style.display ="none";
+    searchWidgetColumn.style.width ="auto";
+    searchWidget.style.maxWidth ="263px";
+    searchWidget.style.left ="0";
+    searchField.value = "";
+    
+    
+}
+
+function submitSearch(){
+    if(searchField.value != ""){
+        //Search parameters can be passed via URL properties (GET)
+        alert("Searching... " + searchField.value);
+    }
+}
+</script>
