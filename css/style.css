@@ -23,9 +23,31 @@ body{
 
 }
 
+/*background colors*/
 .bg_yellow{
      background:var(--stghcs-yellow-one) !important;
  }
+.bg_white{
+     background:white !important;
+ }
+.bg_gray{
+     background:#EEEEEE !important;
+ }  
+.bg_blue{
+     background:var(--stghcs-blue-one) !important;
+ }  
+ 
+/*text*/
+.text_extra_extra_small {
+ font-size: 0.5rem; 
+}
+.text_extra_small {
+ font-size: 0.7rem; 
+}
+.text_normal {
+ font-size: 1rem; 
+}
+ 
 /*overide bootstraps default look*/
 input:focus {
 box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important; 
@@ -127,6 +149,11 @@ border:solid 1px var(--stghcs-blue-one) !important;
  
  /*button behaviours*/
  .desktop_menu_item{
+     position:relative;
+     display:inline-block;
+     cursor:pointer;
+ }
+ .all_menu_item{
      position:relative;
      display:inline-block;
      cursor:pointer;
@@ -319,5 +346,22 @@ border:solid 1px var(--stghcs-blue-one) !important;
  @media (max-width:420px){
      .stghcs_mobile_menu{
          width:100%;
+     }
+     .stghcs_button_001_white{
+         padding:10px;
+     } 
+ }
+ 
+ @media(max-width:360px){
+     .main_wrapper_genevive .top_bar img{
+     width:170px;
+     }
+ }
+  @media(max-width:350px){
+     .main_wrapper_genevive .top_bar img{
+     width:150px;
+     }
+     .top_bar{
+         padding:3px;
      }
  }

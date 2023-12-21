@@ -1,11 +1,5 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://kit.fontawesome.com/ba85401cc4.js" crossorigin="anonymous"></script>
-    <link href="css/style.css" rel="stylesheet">
+    
 
     <title>Top Bar</title>
     
@@ -90,12 +84,34 @@
             width:0;
             height:0;
         }
+        .notification_text_area{
+            width:80%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .stghcs_notif{
+        width:auto;
+        padding:10px;
+        cursor:pointer;
+        border:none;
+    }
+    .stghcs_notif_flyout{
+        position:absolute;
+        top:60px; 
+        width:500px;
+    }
+    
+    @media (max-width:600px){
+        .stghcs_notif_flyout{
+            width:90%;
+        }
+    }
     </style>
 
 </head>
 
 <!--Top Bar HTML-->
-<div class="main_wrapper_genevive">
+
     
     <!--TOP BAR-->
     <div class="top_bar">
@@ -110,9 +126,31 @@
           <!--<div class="stghcs_button_001_blue desktop_menu_item">Login</div>-->
           
           <!--Notification-->
-          <div class="stghcs_button_001_white desktop_menu_item"><img style="width:70%" src="https://lavenduct.com/stghs/assets/bell.svg">
+          <div class="navbar-toggler stghcs_notif all_menu_item"data-bs-toggle="collapse" data-bs-target="#notif_panel" aria-expanded="false"><img style="width:70%" src="https://lavenduct.com/stghs/assets/bell.svg">
           <div class="notification_count stghcs_active"></div>
           </div>
+          
+           <div class="bg_white collapse navbar-collapse shadow animated--grow-in position-absolute dropdown-menu stghcs_notif_flyout" id="notif_panel" >
+            <h6 class="dropdown-header">Notifications</h6>
+            
+            <div><hr class="dropdown-divider"></div>
+            
+            <a class="dropdown-item d-flex align-items-center" href="#">
+        <div class="me-3">
+            <div class="stghcs_user_profile_icon bg_blue">
+               <img style="width:70%" src="https://lavenduct.com/stghs/assets/notification.png"></div></div>
+               
+        <div class="notification_text_area">
+            <div class="text_extra_small">December 12, 2019</div>
+            <span class="small d-inline-block text-truncate" style="width:100%">Your application was viewed.</span>
+        </div>
+    </a>
+            
+            <div><hr class="dropdown-divider"></div>
+            
+    <a class="dropdown-item text-center text_extra_small" href="#">Show All Alerts</a>
+</div>
+
           <!--Notification END-->
           
           
@@ -169,7 +207,6 @@
     </div>
     <!--MOBILE MENU END-->
     
-</div>    
     
 
 
@@ -178,7 +215,7 @@
 <!--BOOTSTRAP JS ENDED-->
 
 <!--TOP BAR JS-->
-<script src="js/top_bar.js"></script>
+<script src="https://lavenduct.com/stghs/js/top_bar.js"></script>
 <!--TOP BAR JS END-->
 
 <script>
