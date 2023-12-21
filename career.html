@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD TAG-->    
+<!--<? include "head.php" ?>-->
+<!--Please retain initial HTML header tags and initial dependencies-->
+
+<body>
+<!--TOP BAR (Contains JS)-->
+<div class="main_wrapper_genevive">
+<!--<? include "payload/top_bar_active.php" ?>--> 
+<!--Top Bar Active is excluded from this file-->
+<style>
+    .careers_area_one{
+       width:100%;
+       height:450px;
+       background: url("https://lavenduct.com/stghs/assets/team.jpg") 20% / cover no-repeat var(--stghcs-blue-one);
+       background-blend-mode: overlay, screen;
+
+    }
+    .careers_area_one_inner{
+        position:relative;
+        width:60%;
+        height:100%;
+        margin:0 auto;
+    }
+    .search_area{
+        position:relative;
+        width:100%;
+        height:140px;
+        top:30%;
+    }
+    .search_area_text{
+        display:inline-block;
+        width:100%;
+        height:50px;
+        line-height:50px;
+        font-weight:500;
+        font-size: 32px;
+        color:white;
+        text-align:center;
+        white-space: nowrap;
+    }
+    .search_area_field_container{
+        position:relative;
+        width:100%;
+        height:auto;
+    }
+    .search_area_field{
+        position:relative;
+        width:100%;
+        height:70px;
+        border: 0.5px solid #172441;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding:30px 30px;
+        font-size:18px;
+        font-weight:400;
+        color:var(--stghcs-blue-one);
+    }
+    .search_area_field_btn{
+        width: 125.875px;
+        height: 70px;
+        flex-shrink: 0;
+        border: 0.5px solid #172441;
+        background: var(--stghcs-yellow-one);
+        position:absolute;
+        top:0;
+        right:0;
+        color:var(--stghcs-blue-one);
+        font-size:32px;
+    }
+    
+     /*filter area*/
+    .filter_area{
+        width:100%;
+        height:auto;
+        border-bottom: 1px solid #172441;
+        background: #FFF;
+        padding:30px;
+    }
+    .jobs_counter{
+        font-size:24px;
+        font-weight:700;
+    }
+    .filter_jobs_search_area{
+        position:absolute;
+        width:150px;
+        height:30px;
+        right:10px;
+    }
+    .filter_icon{
+        position:absolute;
+        width:30px;
+        height:30px;
+        font-size:20px;
+        display:inline;
+        left:-20px;
+        
+    }
+    .filter_select_area{
+        display:inline;
+        white-space: nowrap;
+    }
+    .filter_select{
+        border:none !important;
+        color:var(--stghcs-blue-one);
+    }
+    
+    /*Job Listings*/
+    .job_listings_area{
+        width:100%;
+        min-height:400px;
+        padding:20px 5% 100px 5%;
+    }
+    .job_listing{
+        position:relative;
+        max-width:100%;
+        height:320px;
+        background:white;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        box-sizing:border-box;
+        margin-top:50px;
+    }
+    .like_listing{
+        position:absolute;
+        right:0; padding:10px; font-size:18px; color:#C1C1C1;
+    }
+    .fa-star[data-liked="true"] {
+      color: var(--stghcs-blue-one);
+    }
+    .listing_details_top_area{
+        width:100%; height:120px; padding:10px; box-sizing:border-box
+    }
+    .listing_image{
+        width:100px; height:100px; float:left;  background:#EEEEEE;
+    }
+    .listing_title_area{
+        width:calc(100% - 130px); margin-left:10px; float:left; height:auto;
+    }
+    
+    .listing_title{
+        width:100%; max-height:70px; font-size:28px; font-weight:500; line-height:30px; 
+    }
+    .listing_source{
+        width:100%; max-height:30px; margin-top:2.5px; font-size:16px; font-weight:300; white-space:nowrap 
+    }
+    .listing_post_details_area{
+        position:relative; width:100%; float:left; border-top: 1px solid #ECECEC; border-bottom: 1px solid #ECECEC; padding:15px; margin-top:10px;
+    }
+    .listing_description{
+        position:relative; 
+        width:100%; 
+        float:left; 
+        padding-top:10px; 
+        margin-top:10px; 
+        font-size:14px;
+        display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    }
+
+    @media (max-width:999px){
+        .search_area_text{
+            font-size:28px;
+        }
+        .search_area_field_btn{
+            width: 90px; 
+            font-size:28px;
+        }
+        .job_listings_area{
+            padding-top:0;
+        }
+    }
+    @media (max-width:888px){
+        .search_area_text{
+            font-size:24px;
+        }
+        .search_area_field_btn{
+            width: 80px; 
+            font-size:24px;
+        }
+    }
+    @media (max-width:777px){
+        .careers_area_one_inner{
+            width:75%;
+        }
+        .search_area_text{
+            font-size:22.5px;
+        }
+        .search_area_field_btn{
+            width: 70px; 
+            font-size:22.5px;
+            height:60px;
+        }
+        .search_area_field{
+            height:60px;
+            font-size:20px;
+            padding:20px;
+        }
+    }
+    
+    @media (max-width:600px){
+        .listing_title{
+            font-size:24px;
+            line-height:24px;
+        }
+        .listing_source{
+            font-size:14px
+        }
+    }
+   
+    @media (max-width:555px){
+        .careers_area_one_inner{
+            width:90%;
+        }
+        .search_area_field{
+            font-size:18px;
+        }
+        .listing_title{
+            font-size:22px;
+            line-height:22px;
+        }
+    }
+    
+    @media (max-width:500px){
+        .careers_area_one{
+            height:350px;
+        }
+        .search_area_field{
+            font-size:16px;
+        }
+        .search_area_text{
+        font-size:18px;
+        }
+        .jobs_counter{
+        font-size:18px;
+        }
+        .search_area_field{
+        font-size:14px; 
+        padding:15px;
+        height:50px;
+        }
+        .search_area_field_btn{
+        font-size:18px; 
+        height:50px;
+        width:50px;
+        }
+        .job_listing{
+            height:280px;
+        }
+        .listing_image{
+            width:70px;
+            height:70px;
+        }
+        .listing_title{
+            font-size:20px;
+            line-height:20px;
+        }
+        .listing_source{
+            padding-top:0;
+        }
+    }
+    @media (max-width:430px){
+        .listing_image{
+            display:none;
+        }
+        .listing_title_area{
+            width:90%;
+        }
+        .job_listing{
+            height:250px;
+        }
+    }
+    @media (max-width:360px){
+        .search_area_text{
+        font-size:4.5vw;
+        }
+    }
+</style>
+
+<!--SEARCH AREA-->
+<div class="careers_area_one">
+    <div class="careers_area_one_inner">
+        <div class="search_area">
+        <div class="search_area_text">Find opportunities at St. Genevive</div>
+        <div class="search_area_field_container">
+        <input type="text" class="search_area_field" placeholder="eg. Caregiver in Shreveport">
+        <button class="search_area_field_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        </div>
+        
+    </div>
+</div>
+<!--SEARCH AREA END-->
+
+<!--FILTER AREA-->
+<div class="filter_area">
+    <div class="row">
+        <div class="col-6">
+            <span class="text-start jobs_counter">2309 Jobs</span>
+            </div>
+        <div class="col-6">
+            <div class="filter_jobs_search_area" id="filter_area">
+        <div class="filter_icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="filter_select_area">
+        <select class="form-select form-select-sm filter_select" id="filter_select">
+        <option selected>Location</option>
+        <option value="1">Baton Rouge</option>
+        <option value="2">New Orleans</option>
+        <option value="3">Shreveport</option>
+        <option value="3">Long Name Island</option>
+        </select>
+        </div>
+        
+            </div>
+        </div>
+    </div>
+</div>
+<!--FILTER AREA END-->
+
+<!--JOB LISTINGS AREA-->
+<div class="job_listings_area">
+    <div class="row">
+        <!--not saved listing-->
+        <div class="col-lg-6">
+            <div class="job_listing shadow">
+                <div class="like_listing"><i class="fa-regular fa-star" data-liked="false"></i></div>
+            <div class="listing_details_top_area">
+                <img src="https://lavenduct.com/stghs/assets/listing_placeholder.png" class="listing_image img-fluid">
+                <div class="listing_title_area">
+                    <div class="listing_title">Direct Support Worker</div>
+                    <div class="listing_source">Assisted Living</div>
+                </div>
+                
+                <div class="listing_post_details_area"><span class="small"><span class="me-2"><i class="fa-solid fa-location-dot"></i></span>Louisiana</span> <div class="float-end text_extra_small text-muted"> Yesterday</div></div>
+                 <div class="listing_description">We are looking for a Direct Support Worker to administer our social media accounts. You will be responsible for creating original text and video content, managing posts, and responding to followers. You will manage our company image in a cohesive way to achieve our marketing goals. As a Social media manager, we expect you to be up-to-day....</div>
+            </div>    
+            </div>
+            </div>
+        <!--not saved listing END-->   
+         
+         <!--saved listing-->
+        <div class="col-lg-6">
+            <div class="job_listing shadow">
+                <div class="like_listing"><i class="fa-solid fa-star" data-liked="true"></i></div>
+            <div class="listing_details_top_area">
+                <img src="https://lavenduct.com/stghs/assets/listing_placeholder.png" class="listing_image img-fluid">
+                <div class="listing_title_area">
+                    <div class="listing_title">Direct Support Worker</div>
+                    <div class="listing_source">Assisted Living</div>
+                </div>
+                
+                <div class="listing_post_details_area"><span class="small"><span class="me-2"><i class="fa-solid fa-location-dot"></i></span>Louisiana</span> <div class="float-end text_extra_small text-muted"> Yesterday</div></div>
+                 <div class="listing_description">We are looking for a Direct Support Worker to administer our social media accounts. You will be responsible for creating original text and video content, managing posts, and responding to followers. You will manage our company image in a cohesive way to achieve our marketing goals. As a Social media manager, we expect you to be up-to-day....</div>
+            </div>    
+            </div>
+            </div>
+        <!--saved listing END-->   
+        
+        <!--not saved listing-->
+        <div class="col-lg-6">
+            <div class="job_listing shadow">
+                <div class="like_listing"><i class="fa-regular fa-star" data-liked="false"></i></div>
+            <div class="listing_details_top_area">
+                <img src="https://lavenduct.com/stghs/assets/listing_placeholder.png" class="listing_image img-fluid">
+                <div class="listing_title_area">
+                    <div class="listing_title">Direct Support Worker</div>
+                    <div class="listing_source">Assisted Living</div>
+                </div>
+                
+                <div class="listing_post_details_area"><span class="small"><span class="me-2"><i class="fa-solid fa-location-dot"></i></span>Louisiana</span> <div class="float-end text_extra_small text-muted"> Yesterday</div></div>
+                 <div class="listing_description">We are looking for a Direct Support Worker to administer our social media accounts. You will be responsible for creating original text and video content, managing posts, and responding to followers. You will manage our company image in a cohesive way to achieve our marketing goals. As a Social media manager, we expect you to be up-to-day....</div>
+            </div>    
+            </div>
+            </div>
+        <!--not saved listing END--> 
+        
+        
+        <!--not saved listing-->
+        <div class="col-lg-6">
+            <div class="job_listing shadow">
+                <div class="like_listing"><i class="fa-regular fa-star" data-liked="false"></i></div>
+            <div class="listing_details_top_area">
+                <img src="https://lavenduct.com/stghs/assets/listing_placeholder.png" class="listing_image img-fluid">
+                <div class="listing_title_area">
+                    <div class="listing_title">Direct Support Worker</div>
+                    <div class="listing_source">Assisted Living</div>
+                </div>
+                
+                <div class="listing_post_details_area"><span class="small"><span class="me-2"><i class="fa-solid fa-location-dot"></i></span>Louisiana</span> <div class="float-end text_extra_small text-muted"> Yesterday</div></div>
+                 <div class="listing_description">We are looking for a Direct Support Worker to administer our social media accounts. You will be responsible for creating original text and video content, managing posts, and responding to followers. You will manage our company image in a cohesive way to achieve our marketing goals. As a Social media manager, we expect you to be up-to-day....</div>
+            </div>    
+            </div>
+            </div>
+        <!--not saved listing END--> 
+        
+        
+        <!--not saved listing-->
+        <div class="col-lg-6">
+            <div class="job_listing shadow">
+                <div class="like_listing"><i class="fa-regular fa-star" data-liked="false"></i></div>
+            <div class="listing_details_top_area">
+                <img src="https://lavenduct.com/stghs/assets/listing_placeholder.png" class="listing_image img-fluid">
+                <div class="listing_title_area">
+                    <div class="listing_title">Direct Support Worker</div>
+                    <div class="listing_source">Assisted Living</div>
+                </div>
+                
+                <div class="listing_post_details_area"><span class="small"><span class="me-2"><i class="fa-solid fa-location-dot"></i></span>Louisiana</span> <div class="float-end text_extra_small text-muted"> Yesterday</div></div>
+                 <div class="listing_description">We are looking for a Direct Support Worker to administer our social media accounts. You will be responsible for creating original text and video content, managing posts, and responding to followers. You will manage our company image in a cohesive way to achieve our marketing goals. As a Social media manager, we expect you to be up-to-day....</div>
+            </div>    
+            </div>
+            </div>
+        <!--not saved listing END--> 
+        
+        
+        <!--not saved listing-->
+        <div class="col-lg-6">
+            <div class="job_listing shadow">
+                <div class="like_listing"><i class="fa-regular fa-star" data-liked="false"></i></div>
+            <div class="listing_details_top_area">
+                <img src="https://lavenduct.com/stghs/assets/listing_placeholder.png" class="listing_image img-fluid">
+                <div class="listing_title_area">
+                    <div class="listing_title">Direct Support Worker</div>
+                    <div class="listing_source">Assisted Living</div>
+                </div>
+                
+                <div class="listing_post_details_area"><span class="small"><span class="me-2"><i class="fa-solid fa-location-dot"></i></span>Louisiana</span> <div class="float-end text_extra_small text-muted"> Yesterday</div></div>
+                 <div class="listing_description">We are looking for a Direct Support Worker to administer our social media accounts. You will be responsible for creating original text and video content, managing posts, and responding to followers. You will manage our company image in a cohesive way to achieve our marketing goals. As a Social media manager, we expect you to be up-to-day....</div>
+            </div>    
+            </div>
+            </div>
+        <!--not saved listing END--> 
+        
+        </div>
+    </div>
+    
+</div>
+<!--JOB LISTINGS AREA END-->
+
+</div>
+
+
+
+<script>
+
+    //resive location filter based on selected option text
+    var selectFilter = document.getElementById("filter_select");
+    filter_select.addEventListener("change", resizeFilter);
+    
+    //resize filter 
+    function resizeFilter(){
+        var selectedOption = selectFilter.options[selectFilter.selectedIndex].text;
+        if(selectedOption.length < 15){
+            document.getElementById("filter_area").style.width= 30 + (selectedOption.length * 10) + "px";
+        }else{
+            document.getElementById("filter_area").style.width= 15 + (selectedOption.length * 10) + "px";
+        }
+        
+        
+    }
+    
+    //on enterFrame > window.onLoad
+    resizeFilter();
+    
+    
+    //save/unsave
+    var starElements = document.querySelectorAll('.fa-star');
+    
+    // Iterate through the NodeList of elements with the class "star"
+    starElements.forEach(function(element) {
+    // Do something with each element
+    element.addEventListener("click", function(e){
+        var state = this.getAttribute("data-liked");
+        
+        //save 
+        if(state=="false"){
+            state = true;
+            this.setAttribute("data-liked", true);
+            this.classList.remove('fa-regular');
+            this.classList.add('fa-solid');
+            //call endpoint
+        }
+        if(state=="true"){
+            state = false;
+            this.setAttribute("data-liked", false);
+            this.classList.remove('fa-solid');
+            this.classList.add('fa-regular');
+            //call endpoint
+        }
+    });
+});
+    
+    
+</script>
+
+</body>
