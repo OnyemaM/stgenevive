@@ -1,0 +1,360 @@
+<html lang="en">
+
+<!-- HEAD TAG-->    
+<? include "head.php" ?>
+
+<body>
+    <div class="main_wrapper_genevive">
+    <? include "payload/top_bar_active.php" ?>
+    <? include "payload/widget_filter.php" ?>
+    
+    
+    <style>
+    .top_indic{
+        padding: 20px 0;
+    }
+    .post_date{
+        color:#a8a8a8;
+    }
+     .job_description_body{
+         width:90%;
+         min-height:300px;
+         background:#eee;
+         margin:0 auto;
+         padding:50px 20px;
+         box-sizing:border-box;
+     }
+     .job_title{
+         font-weight:600;
+         font-size:48px;
+         line-height:55px;
+     }
+     .job_detail_one{
+        font-size: 18px;
+        font-weight: 600;
+     }
+     .action_area{
+         border-top:0.5px solid #d2d2d2;
+         border-bottom:0.5px solid #d2d2d2;
+         padding:20px;
+         margin-top:20px;
+     }
+    .job_author_area{
+        padding:40px;
+        width:100%;
+        background:white;
+        margin-top:50px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .job_description_area{
+        padding:40px;
+        width:100%;
+        min-height:300px;
+        background:white;
+        margin-top:50px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+    .author_image{
+        width:70px; height:70px; float:left;  background:#EEEEEE;
+    }
+    .author_name{
+        font-size:24px;
+        font-weight:600;
+    }
+    .sub_title{
+        font-size:20px;
+        font-weight:600;
+    }
+    .author_description{
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+    .deadline{
+        font-size:18px;
+        font-weight:600;
+        padding:18px;
+    }
+
+.save_job_button{
+    font-size:16px;
+    font-weight:600;
+    color:var(--stghcs-blue-one);
+    border:none;
+    background:none;
+}
+
+.apply_button {
+  background-color: #FFFFFF;
+  border: 2px solid var(--stghcs-blue-one);
+  box-shadow: var(--stghcs-blue-one) 4px 4px 0 0;
+  color: var(--stghcs-blue-one);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0 16px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.apply_button:hover {
+  background-color: #fff;
+}
+
+.apply_button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .apply_button {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+@media (max-width:900px){
+    .return{
+        font-size:13px;
+    }
+    .job_title{
+        font-size:32px;
+        line-height:40px;
+    }
+    .job_detail_one{
+        font-size:14px;
+    }
+    .apply_button{
+        font-size:14px;
+        padding: 0 16px;
+        line-height: 30px;
+    }
+    .save_job_button{
+        font-size:14px;
+    }
+    .post_date{
+        font-size:10px;
+    }
+    .deadline{
+        font-size:14px;
+    }
+}
+
+@media (max-width:500px){
+    .job_description_body{
+        width:95%;
+        padding:10px;
+    }
+    .job_title{
+        font-size:24px;
+        line-height:30px;
+    }
+    .job_detail_one{
+        font-size:10px;
+    }
+    .job_author_area, .job_description_area{
+        padding:30px;
+    }
+    .author_image{
+        width:50px;
+        height:50px;
+    }
+    .author_name{
+        font-size:18px;
+    }
+    .sub_title{
+       font-size:16px; 
+    }
+    .author_description, .job_description_area, .read_more{
+        font-size:14px;
+        
+    }
+    .deadline{
+        font-size:12px;
+    }
+}
+    </style>
+    
+    <div class="job_description_body">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between">
+                <span class="top_indic fw-bolder return"><i class="fa-solid fa-arrow-left me-2"></i>Return To Careers</span>
+                <span class="top_indic small post_date"><i class="fa-solid fa-thumbtack me-1"></i><span >Yesterday</span></span>
+            </div>
+            <div class="col-12 job_title">
+        Certified Nursing Assistant – Long Term Personal Care
+            </div>
+            <div class="col-12 d-flex align-items-center mt-2" >
+                <div><span class="job_detail_one"><i class="fa-solid fa-location-dot me-2"></i>Atlanta, Bossier City, LA</span></div>
+                <div class="ms-3 me-3">|</div>
+                 <span class="job_detail_one">Assisted Liviving</span>
+            </div>
+            <div class="col-12 d-flex action_area justify-content-between">
+            <button class="apply_button" role="button">Apply</button>
+            <button class="save_job_button" role="button"><i class="fa-solid fa-star"></i> Save Job</button>
+            </div>
+        </div>
+        
+        <div class="job_author_area">
+            <div class="row">
+                <div class="col-12 d-flex align-items-center ">
+                    <img src="https://lavenduct.com/stghs/assets/listing_placeholder.png" class="author_image img-fluid">
+                    <span class="author_name ms-3">St. Genevive</span>
+                </div>
+                <div class="col-12 mt-3 author_description">St. Genevive is an American medical organization renowned for its integrated clinical practice, education, and research. Mission: St. Genevive's primary mission is to inspire hope and contribute to health and well-being by providing the best care to every patient through integrated clinical practice, education, and research. The Mayo Clinic operates a network of hospitals, clinics, and medical facilities, providing comprehensive medical services across various specialties. The Mayo Clinic operates a network of hospitals, clinics, and medical facilities, providing comprehensive medical services across various specialties. The Mayo Clinic is a nonprofit American medical organization renowned for its integrated clinical practice, education, and research</div>
+            </div>
+            <div class="col mt-3">
+                <span class="fw-bold read_more" role="button">Read More <i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+        </div>
+        
+        <div class="job_description_area">
+    <span class="sub_title">Job Description</span>
+   <p> Overview: As a Health Worker, your primary responsibility is to promote and maintain the health and well-being of individuals and communities. You will work closely with healthcare professionals to implement health programs, provide education, and offer support to ensure the delivery of high-quality healthcare services.</p> 
+   <p> In a nutshell</p> 
+   <p> Imagine this: You, the Talent Recruiter collaborating with healthcare leaders, department managers, and a spectrum of sources to curate the finest healthcare professionals.</p> 
+   <p> The missionâ¦</p> 
+   <p> To elevate healthcare recruitment through strategic sourcing, an artful approach to interviews, and a commitment to finding the perfect match.</p> 
+   <p> As the Talent Recruiter, I..</p> 
+   <ul>
+    <li>Craft and orchestrate comprehensive recruiting strategies tailored to the unique nuances of the healthcare industry.</li>
+   </ul> 
+   <ul>
+    <li>Sculpt detailed job descriptions and specifications that resonate with healthcare professionals.</li>
+   </ul> 
+   <ul>
+    <li>Conduct intricate job and task analyses, capturing the essence of roles in a healthcare space.</li>
+   </ul> 
+   <ul>
+    <li>Disseminate recruitment materials across industry-specific channels, creating a buzz in the healthcare community.</li>
+   </ul> 
+   <ul>
+    <li>Apply my discerning eye to screen resumes and applications, ensuring a precise fit for healthcare roles.</li>
+   </ul> 
+   <ul>
+    <li>Conduct interviews with a professional finesse, utilizing industry-relevant selection tools and methods.</li>
+   </ul> 
+   <ul>
+    <li>Monitor and implement HR recruiting best practices, aligning with the gravity of healthcare responsibilities.</li>
+   </ul> 
+   <p> My Superpowers at Play:</p> 
+   <ul>
+    <li> Telepathic Sourcing: Channeling my abilities to anticipate and fulfill future hiring needs.</li>
+    <li> Social Media Shape shifting: Attracting healthcare talents through captivating online advertisements.</li>
+    <li> Resume Alchemist: Turning ordinary resumes into golden opportunities with my unique touch.</li>
+    <li> Interview Invisibility: Conducting interviews with such finesse that candidates feel they're in a cocoon of comfort, encouraging them to reveal their true potential.</li>
+   </ul> 
+   <p> As a top performer, Iâ¦</p> 
+   <ul>
+    <li> Work with an X-ray vision: A knack for identifying exceptional healthcare professionals in a crowded field.</li>
+    <li> Work with Efficiency: Move through recruitment processes with the speed of light, without sacrificing quality.</li>
+    <li> Utilize Adaptability: Flexibility to navigate the ever-evolving landscape of healthcare recruitment.</li>
+    <li> Utilize proper communication: Commanding communication skills that resonate with healthcare professionals and internal stakeholders alike.</li>
+    <li> Utilize decisive decision-making: Taking decisions with keen precision</li>
+   </ul> 
+   <p> Impact in this role..</p> 
+   <p> I not only recruit, but also directly influence operational efficiency, strategic decision-making, and the elevation of healthcare standards, contributing significantly to the success of their healthcare initiatives.</p> 
+   <p> My Professional Checklistâ¦</p> 
+   <ul>
+    <li>Proven work experience (at least 2 years ) as a Recruiter, with a track record in healthcare recruitment.</li>
+   </ul> 
+   <ul>
+    <li>Expertise in various interview formats, from structured to competency-based, tailored for healthcare professionals.</li>
+   </ul> 
+   <ul>
+    <li>Hands-on experience with healthcare-specific selection processes, including video and phone interviews.</li>
+   </ul> 
+   <ul>
+    <li>Familiarity with HR databases, ATS, and CMS in the healthcare landscape.</li>
+   </ul> 
+   <ul>
+    <li>Proficiency in utilizing recruiting software and a deep understanding of HRIS/HRMS.</li>
+   </ul> 
+   <ul>
+    <li>Exceptional communication and interpersonal skills, with a knack for making serious decisions.</li>
+   </ul> 
+   <ul>
+    <li>Experience recruiting globally or in a start-up environment is highly preferred.</li>
+   </ul> 
+   <ul>
+    <li>Bachelor's degree in Human Resources or a closely related field.</li>
+   </ul> 
+   <p> On navigating the challenges..</p> 
+   <p> My responsibility involves addressing complex healthcare challenges, streamlining recruitment workflows, and ensuring the strategic alignment of talent with healthcare excellence.</p> 
+   <p> What Awaits You on this journeyâ¦</p> 
+   <ul>
+    <li>A unique opportunity to shape the future of healthcare talent acquisition.</li>
+   </ul> 
+   <ul>
+    <li>Competitive compensation, a culture of professionalism, and continuous professional growth in the healthcare domain.</li>
+   </ul> 
+   <p> If the prospect of being a key player in advancing healthcare recruitment resonates with your professional aspirations, we invite you to submit your application today.</p>
+  
+        </div>
+        <div class="col-12 d-flex  align-items-center"> <span class="deadline"><i class="fa-solid fa-hourglass-end me-2"></i> Application Deadline  - March 18, 2024</span></div>
+        <div class="col-12 d-flex align-items-center action_area justify-content-between">
+            <button class="apply_button" role="button">Apply</button>
+            <button class="save_job_button" role="button"><i class="fa-solid fa-star"></i> Save Job</button>
+            </div>
+    </div>
+    </div>
+
+<!--MODAL-->
+<? include "modals/application.php" ?>
+<!--MODAL END-->
+
+<!--APPLICATION JS-->
+<script src="js/transitions.js"></script>
+<script>
+    var applyButtons = document.querySelectorAll(".apply_button"); 
+    var applyModal = document.getElementById("apply_modal"); 
+    var closeApplyModal = document.querySelector(".apply_modal_closer");
+    var apply= document.getElementById("apply");
+    
+    //
+    applyButtons.forEach(function(applyButton) {
+    applyButton.addEventListener("click", function() {
+        applyModal.style.display = "block";
+    });
+    
+});
+
+
+    //
+    closeApplyModal.addEventListener("click", function() {
+        applyModal.style.display = "none";
+    });
+    
+    //
+    apply.addEventListener("click", function() {
+        createTransition("job_application",sayJobApplied, "swiper");
+    });
+
+
+        function sayJobApplied(targetId){
+        document.getElementById("application_content").innerHTML="";
+        var target = document.getElementById(targetId);
+        var message = document.getElementById("job_applied_message");
+        document.getElementById("job_application").style.position="relative";
+        message.style.display = "block";
+        message.style.background ="none";
+        target.appendChild(message);
+        //window.location.replace("https://www.lavenduct.com/stghs/careers");
+        
+        //
+        applyButtons.forEach(function(applyButton) {
+            applyButton.innerHTML="<i class='fa-solid fa-check me-1'></i> Applied";
+        });
+        }
+
+
+</script>
+<!--APPLICATION JS END-->
+
+</body>

@@ -1,0 +1,76 @@
+<style>
+    .apply_modal{
+        display:none;
+        width:100%; background:#0000001e; height:100%; position:fixed; overflow-y:scroll;
+    }
+    .apply_modal_inner{
+        position:relative;
+        max-width:500px; min-height:300px; background:white; margin:0 auto; margin-top:50px; padding:30px;
+    }
+    .apply_modal_closer{
+        width:50px;
+        height:50px;
+        position:absolute;
+        right:0;
+        top:0;
+        border:none;
+        background:none;
+        color:#aeaeae;
+        font-size:18px;
+    }
+    .applicant_info_area{
+        border-radius: 24px;
+        border: 1px solid #FF6;
+        background: rgba(255, 255, 102, 0.26);
+        width:100%; 
+        min-height:50px; 
+    }
+    @media (max-width:600px){
+        .apply_modal_inner{
+            width:95%;
+            top:10px;
+        }
+    }
+</style>
+<div class="apply_modal" id="apply_modal" >
+    <div class="apply_modal_inner">
+        <button class="apply_modal_closer"><i class="fa-solid fa-xmark"></i></button>
+     
+    <div id="job_application">   
+    <div class="row" id="application_content">
+        <div class="col-12">Job Title</div>
+        <div class="col-12 mb-4 fw-bolder">Direct Support Worker – SIL</div>
+        <div class="col-12">My Profile</div>
+        <div class="col-12 text_extra_small">Your profile contains you information about you and would be sent along side this application. Please ensure it is up-to-date. </div>
+        <div class="col-12 mb-4">
+            <div class="applicant_info_area"></div>
+            </div>
+            
+        <div class="col-12">My Resume</div>
+        <div class="col-12 mb-4">
+  <input class="form-control form-control-sm" id="formFileSm" type="file">
+        </div>
+        
+        <div class="col-12">Cover Letter</div>
+        <div class="col-12 mb-4"><textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="col-12">
+            <button class='stghcs_button_001_blue' id="apply">Apply</button>
+        </div>
+        
+    </div>
+    </div> 
+    </div>
+    
+    <!--APPLIED MESSAGE-->
+        <div id="job_applied_message" class="mt-5 text-center" style="display:none;">
+        <img style="height:100px" src="https://lavenduct.com/stghs/assets/success.png">
+        <div class="col-12 mt-1 h4 text-center fw-bold">
+                 Application Submitted
+             </div>
+        <div class="col-12 h6 text-center fw-normal status_message">
+                 You will be contacted shortly. 
+             </div>
+        </div>
+    <!--APPLIED EMAIL MESSAGE END-->
+</div>
