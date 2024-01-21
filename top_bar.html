@@ -10,174 +10,76 @@
   <title>Top Bar</title>
   
   <style>
-      /*user profile icon*/
-      .stghcs_user_profile_icon{
-          width:40px;
-          height:40px;
-          background:var(--stghcs-blue-pale);
-          border-radius:20px;
-          line-height:40px;
-          text-align:center;
-          font-weight:600;
-          color:#BEE0FF;
-          text-transform: capitalize;
-          cursor:pointer;
-      }
-      .profile_details_area{
-          padding:.25rem 1rem 1rem 1rem;
-          box-sizing:border-box;
-          height:40px;
-          margin-bottom:1rem;
-          cursor:pointer;
-      }
-      .stghcs_user_profile_icon_nested{
-          width:40px;
-          height:40px;
-          background:var(--stghcs-blue-pale);
-          border-radius:20px;
-          line-height:40px;
-          text-align:center;
-          font-weight:600;
-          color:#BEE0FF;
-          text-transform: capitalize;
-          cursor:pointer;
-          /*margin:10px;*/
-      }
-      .profile_icon_area{
-          float:left; 
-          width:2.5rem; 
-          height:40px; 
-          display:inline-block; 
-          margin-right:.5rem;
-      }
-      .profile_name_area{
-          float:left; 
-          width:8rem; 
-          height:40px; 
-          display:inline-block;
-      }
-      .profile_name_area_inner_top{
-          display:block; 
-          width:100%; 
-          height:26px; 
-          font-size:16px; 
-          line-height:32px;
-          font-weight:500;
-      }
-      .profile_name_area_bottom{
-          display:block; 
-          width:100%; 
-          height:14px; 
-          font-size:10px; 
-          line-height:7px; 
-          text-transform:uppercase;
-          color:#868686;
-      }
-      .flyout_menu_font_size{
-          font-size:13px;
-      }
-      .notification_count{
+      .stghcs_dropdown_main{
+          min-width:300px;
+          background:white;
+          color:var(--stghcs-blue-one);
+          font-size:16px;
+          padding:20px;
           position:absolute;
-          background:red;
-          top:15px;
-          border-radius:30px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          top:100%;
+          border: 0.5px solid #eee;
+}
+          
+      .menu_sub_items{
+          padding:10px;
+          color:var(--stghcs-blue-one);
       }
-      .stghcs_active{
-          width:10px;
-          height:10px;
-      }
-      .stghcs_inactive{
-          width:0;
-          height:0;
-      }
-      .notification_text_area{
-          width:80%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-      }
-      .stghcs_notif{
-      width:auto;
-      padding:10px;
-      cursor:pointer;
-      border:none;
-  }
-  .stghcs_notif_flyout{
-      position:absolute;
-      top:60px; 
-      max-width:300px;
-  }
+      
+      .accordion-button:not(.collapsed) {
+color: var(--stghcs-blue-one);;
+background-color: #ffffff;
+box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+      .non-accordion .accordion-button::after {
+display: none;
+}
+.menu_sub_items:hover {
+  font-weight: 500;
+  background-color: #eee;
+}
   </style>
 
 </head>
 
 <!--Top Bar HTML-->
-<div class="main_wrapper_genevive">
+
   
   <!--TOP BAR-->
-  <div class="top_bar">
+  <div class="top_bar shadow">
+  <div class="segment_container">
   <div class="row">
       <div class="col-4 d-flex align-items-center">
       <img src="https://lavenduct.com/stghs/assets/St_Genevive_Logo.svg">
       </div>
       <div class="col-8 d-flex justify-content-end align-items-center">
-        <a href="https://www.lavenduct.com/stghs/onboard"><div class="stghcs_button_001_white desktop_menu_item">Career</div></a>
-        <div class="stghcs_button_001_white desktop_menu_item">About Us</div>
-        <div class="stghcs_button_001_white desktop_menu_item">Blog</div>
-        <!--<div class="stghcs_button_001_blue desktop_menu_item">Login</div>-->
+        <div class="col-8 d-flex justify-content-end align-items-center">
+        <a href="https://www.lavenduct.com/stghs/onboard"><div class="stghcs_button_001_white desktop_menu_item">Careers</div></a>
         
-        <!--Notification-->
-        <div class="navbar-toggler stghcs_notif all_menu_item"data-bs-toggle="collapse" data-bs-target="#notif_panel" aria-expanded="false"><img style="width:70%" src="https://lavenduct.com/stghs/assets/bell.svg">
-        <div class="notification_count stghcs_active"></div>
-        </div>
-        
-         <div class="bg_white collapse navbar-collapse shadow animated--grow-in position-absolute dropdown-menu stghcs_notif_flyout" id="notif_panel" >
-          <h6 class="dropdown-header">Notifications</h6>
-          
-          <div><hr class="dropdown-divider"></div>
-          
-          <a class="dropdown-item d-flex align-items-center" href="#">
-      <div class="me-3">
-          <div class="stghcs_user_profile_icon bg_blue">
-             <img style="width:70%" src="https://lavenduct.com/stghs/assets/notification.png"></div></div>
-             
-      <div class="notification_text_area">
-          <div class="text_extra_extra_small">December 12, 2019</div>
-          <span class="text_extra_small d-inline-block text-truncate">Your application was viewed.</span>
-      </div>
+        <!--Drop Down-->
+        <div class="nav-item">
+        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+  <div class="stghcs_button_001_white desktop_menu_item">Services&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg></div>
   </a>
-          
-          <div><hr class="dropdown-divider"></div>
-          
-  <a class="dropdown-item text-center text_extra_small" href="#">Show All Alerts</a>
-</div>
 
-        <!--Notification END-->
-        
-        
-        <!--User Icon-->
-          <div class="btn-group">
-              <div class="stghcs_user_profile_icon" id="user_profile_icon" data-bs-toggle="dropdown" aria-expanded="false">--</div>
-                   <ul class="dropdown-menu">
-                       <li>
-           <a href="#"><div class="profile_details_area">               
-          <div class= "profile_icon_area">
-              <div class="stghcs_user_profile_icon_nested" id="user_profile_icon_nested"></div>
-          </div>
-          <div class= "profile_name_area">
-              <div class="profile_name_area_inner_top">Jamal Malik</div>
-              <div class="profile_name_area_bottom">Candidate</div>
-          </div>
-          </div></a> 
-              </li>
-                      <li><hr class="dropdown-divider"></li>
-                           
-                      <li><a class="dropdown-item flyout_menu_font_size" href="#">Account Settings</a></li>
-                      <li><span><a class="dropdown-item flyout_menu_font_size" href="#">Help Center</a></span></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><span><a class="dropdown-item flyout_menu_font_size" href="#"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out</a></span></li>
-                  </ul>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                  data-parent="#accordionSidebar">
+                  <div class="py-1 stghcs_dropdown_main">
+                      <a class="collapse-item"><div class="menu_sub_items">Children's Choices Waiver</div></a>
+                      <a class="collapse-item"><div class="menu_sub_items">Residential Options Waiver</div></a>
+                      <a class="collapse-item"><div class="menu_sub_items">Long-Term Personal Care</div></a>
+                      <a class="collapse-item"><div class="menu_sub_items">New Opportunities Waiver</div></a>
+                      <a class="collapse-item"><div class="menu_sub_items">Community Choices Waiver</div></a>
                   </div>
-        <!--User Icon END-->
+              </div>
+              </div>
+        <!--Drop Down End-->         
+                  
+        <div class="stghcs_button_001_white desktop_menu_item">Menu Three</div>
+        <a href="https://www.lavenduct.com/stghs/login"><div class="stghcs_button_001_blue desktop_menu_item">Login</div></a>
         
         <!--Mobile Menu Hamburger Toggle-->
         <div class="stghcs_button_001_white mobile_menu_toggle" id="open_stghcs_mobile_menu">
@@ -189,9 +91,11 @@
       </div>
   </div>
   </div>
+  </div>
+</div>
   <!--TOP BAR ENDS-->
   
-  <!--MOBILE MENU-->
+   <!--MOBILE MENU-->
   <div class="stghcs_mobile_menu" id="stghcs_mobile_menu">
   <div class="mobile_menu_top_bar">
       <div class="stghcs_button_001_white" id="close_stghcs_mobile_menu">
@@ -199,15 +103,55 @@
         </div>
   </div>
   
-  <a href="https://www.lavenduct.com/stghs/onboard"><div class="stghcs_button_002_white mobile_menu_item">Career</div></a>
-  <div class="stghcs_button_002_white mobile_menu_item">About Us</div>
-  <div class="stghcs_button_002_white mobile_menu_item">Blog</div>
+  
+  
+<div class="accordion accordion-flush bg_white m-0 p-0" id="accordionFlushExample">
+
+<!--1 Non-Accordion item start-->
+<div class="accordion-item">
+  <h6 class="accordion-header non-accordion" id="flush-headingOne">
+     <a href="https://www.lavenduct.com/stghs/onboard"><button class="accordion-button text-uppercase" type="button" >
+      CAREER
+    </button></a>
+  </h6>
+</div>
+<!--1 end-->
+
+<!--2 Accordion item start-->
+<div class="accordion-item">
+  <h2 class="accordion-header" id="item-2">
+    <button class="accordion-button collapsed text-uppercase" type="button" data-bs-toggle="collapse" data-bs-target="#flush-item-2" aria-expanded="false" aria-controls="flush-item-2">
+      Services
+    </button>
+  </h2>
+  <div id="flush-item-2" class="accordion-collapse collapse" aria-labelledby="item-2" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">
+    <a href="https://www.lavenduct.com/stghs/onboard"><div class="stghcs_button_002_white mobile_menu_item">Children's Choices Waiver</div></a>
+    <a href="https://www.lavenduct.com/stghs/onboard"><div class="stghcs_button_002_white mobile_menu_item">Residential Options Waiver</div></a>
+    <a href="https://www.lavenduct.com/stghs/onboard"><div class="stghcs_button_002_white mobile_menu_item">Long-Term Personal Care</div></a>
+    <a href="https://www.lavenduct.com/stghs/onboard"><div class="stghcs_button_002_white mobile_menu_item">New Opportunities Waiver</div></a>
+    <a href="https://www.lavenduct.com/stghs/onboard"><div class="stghcs_button_002_white mobile_menu_item">Community Choices Waiver</div></a>
+    </div>
+  </div>
+</div>
+<!--2 end-->
+
+<!--3 Non-Accordion item start-->
+<div class="accordion-item">
+  <h6 class="accordion-header non-accordion" id="item-3">
+     <a href="https://www.lavenduct.com/stghs/onboard"><button class="accordion-button text-uppercase" type="button" >
+      Health care
+    </button></a>
+  </h6>
+</div>
+<!--3 end-->
+
+</div>
+
   
   
   </div>
   <!--MOBILE MENU END-->
-  
-</div>    
   
 
 
@@ -218,27 +162,3 @@
 <!--TOP BAR JS-->
 <script src="js/top_bar.js"></script>
 <!--TOP BAR JS END-->
-
-<script>
-const  userData = {
-      firstname: "Jamal",
-      lastname: "malik",
-      othernames: "Samad",
-      type: "Candidate"
-}
-var userIcon = document.getElementById("user_profile_icon");
-var userIconNested = document.getElementById("user_profile_icon_nested");
-
-//return capitalised initials
-function setInitials(data){
-var firstInital = userData.firstname.match(/[a-zA-Z]/);
-var secondInital = userData.lastname.match(/[a-zA-Z]/);
-var userInitials = firstInital[0]+secondInital[0];
-return  userInitials;
-}
-
-//set initials for menu flyout profile img placeholders
-userIcon.textContent = setInitials(userData).toUpperCase();
-userIconNested.textContent = setInitials(userData).toUpperCase();
-
-</script>
