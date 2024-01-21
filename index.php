@@ -7,36 +7,38 @@
 
 <body>
 <!--TOP BAR (Contains JS)-->
-<div class="main_wrapper_genevive bg_white">
 <? include "top_bar.php" ?>
+
+<div class="main_wrapper_genevive bg_white spaced_wrapper">
+
 
 <style>
     /*titles*/
-    .home_title_one{
+    .core_title_one{
         color:white;
         font-size: 42px;
         font-style: normal;
-        font-weight: 800;
+        font-weight: 700;
         line-height: normal;
-        text-transform: capitalize; 
     }
-    .home_sub_title_one{
+    .core_sub_title_one{
         color:white;
-        font-size: 24px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        max-width:400px;
     }
-    .home_sub_title_two{
+    .core_sub_title_two{
         font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
     }
-    .home_title_two{
+    .core_title_two{
         font-size: 32px;
         font-style: normal;
-        font-weight: 800;
+        font-weight: 700;
         line-height: normal;
     }
     
@@ -82,11 +84,11 @@
         position:absolute; 
         background: linear-gradient(to top, var(--stghcs-blue-one), rgba(0, 0, 0, 0));
         width:100%; 
-        height:60px; 
+        height:60%; 
         bottom:0;
         font-size:16px;
         color:white;
-        font-weight:600;
+        font-weight:500;
         padding:10px;
         line-height:1.2;
     }
@@ -107,8 +109,8 @@
          padding: 6vw 6vw; margin:0;
      }
         .stghcs_slide_show_image_area{
-            position:absolute;  display:flex; width:55vw; min-height:460px;  height:auto; background:#eeeeee; top:0;
-            right:0;
+            position:absolute;  display:flex; width:50%; min-height:460px;  height:auto; background:#eeeeee; top:0;
+            right:0; overflow:hidden;
         }
         .stghcs_slide_show_image{
             position:absolute;
@@ -124,6 +126,7 @@
         padding:7px 14px;
         background:white;
         color:var(--stghcs-blue-one);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         
     }
     
@@ -173,7 +176,7 @@
     .video_area{
         position:relative;
         display:block;
-        width:100%; height:auto; background:var(--stghcs-blue-one);
+        width:100%; height:auto;
         margin-top:120px;
     }
     .segment_title{
@@ -186,7 +189,7 @@
     width: 70vw;
     max-width: 800px; 
     background: black;
-    border-radius: 5vw;
+    border-radius: 20px;
     margin: 0 auto;
     aspect-ratio: 16/9;
     background-size:cover;
@@ -218,7 +221,7 @@
         width:100%; height:auto; background:white; text-align:center; padding-bottom:30px;
     }
     .video_bottom_area{
-        width:100%; height:25vw; var(--stghcs-blue-one);
+        width:100%; height:25vw; background:var(--stghcs-blue-one);
     }
     @media (max-width:1300px){
         .stghcs_slide_show_text_title{
@@ -335,6 +338,7 @@
     
     /*segs*/
     .video_title_segment, .blog_area, .our_services_title_segment{
+        text-align:left;
       padding-left:5%;
       padding-right:5%;  
     }
@@ -363,15 +367,17 @@
         }
     }
     
+
+    
 </style>
 
-<? include 'home/temporary_header.php'?>
+<? //include 'home/temporary_header.php'?>
+<? include 'home/new_header.php'?>
 <? include 'home/services_slider.php'?>
 <? include 'home/sliding_blog_area_one.php'?>
 <? include 'home/blog_area_two.php'?>
-<? include 'home/video_seg.php'?>
-<? include 'widget/footer.php'?>
-
+<? include 'home/testimonials.php'?>
+<? include 'payload/footer.php'?>
 
 </div>
 

@@ -1,3 +1,4 @@
+<div class="segment_container">
 <div class="stghcs_slide_show"> 
 <!--HELLO Dennis-->
 <!--Core Attribute Are:
@@ -10,7 +11,9 @@
     <div class="stghcs_slide_show_image_area sss_height">
         <img id="" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/D8B9/production/_121018455_gettyimages-577003673.jpg" class="stghcs_slide_show_image sss_height" data-title="Our Story So Good " data-sub="In every hour of the day" data-message="Energize your day with a mix of cardio and strength exercises. A brisk walk or jog combined with body weight exercises can do wonders for your overall health." data-link="https://cnn.com">
         
-        <img id="" src="https://t4.ftcdn.net/jpg/00/66/01/29/360_F_66012928_ztFfdS8dnLgghWKWxrDOH8FfhrzAkI2Z.jpg" class="stghcs_slide_show_image sss_height" data-title="Our Journey So Far " data-sub="In every part of the Way" data-message="Join us as we take a thrilling ride through the legacy of the Dodge Challenger, celebrating its indomitable spirit and the timeless allure that continues to make the Dodge Challenger remains an icon of American automotive excellence." data-link="https://lavenduct.com">
+        <img id="" src="https://t4.ftcdn.net/jpg/00/66/01/29/360_F_66012928_ztFfdS8dnLgghWKWxrDOH8FfhrzAkI2Z.jpg" class="stghcs_slide_show_image sss_height" data-title="Your opportunity to work the way you want to. 
+ " data-sub="Bringing flexibility to work" data-message="As a care worker, you take on a lot of pressure as it is—and the last thing you need is the added stress of work schedules & low pay. By offering gig-style opportunities and continuous training for carers, you get the flexibility to work when you want at a better rate, plus the skills to feel more confident in what you do.
+" data-link="https://lavenduct.com">
         
         <img id="" src="https://media.istockphoto.com/id/1198224204/photo/portrait-of-female-nurse-using-tablet-at-hospital.jpg?s=612x612&w=0&k=20&c=JoEUaKmCE6N6E5ew4nno_7qBcdl0O8sm6pf5sythyjY=" class="stghcs_slide_show_image sss_height" data-title="A Fresh Start" data-sub="My First Day at STGHCS" data-message="Hear me out. We take a thrilling ride through the legacy of the Dodge Challenger, celebrating its indomitable spirit and the timeless allure that continues to make the Dodge Challenger remains an icon of American automotive excellence." data-link="https://lavenduct.com">
        
@@ -21,9 +24,9 @@
     </div>
     <div class="stghcs_slide_show_text_area d-md-flex align-items-center justify-content-start">
     <div class="row">
-        <div class="col-12 stghcs_slide_show_text_title" id="slide_title">Our Journey So Far </div>
-        <div class="col-12 stghcs_slide_show_text_sub_title" id="slide_sub">In every part of the Way</div>
-        <div class="col-12 stghcs_slide_show_text_message" id="slide_message">Energize your day with a mix  of cardio and strength exercises. A brisk walk or jog combined with body weight exercises can do wonders for your overall health.</div>
+        <div class="col-12 stghcs_slide_show_text_sub_title" id="slide_sub">--</div>
+        <div class="col-12 stghcs_slide_show_text_title" id="slide_title">--</div>
+        <div class="col-12 stghcs_slide_show_text_message" id="slide_message">--</div>
         <div class="col-12 stghcs_slide_show_cta" >
             <button class="learn_more_btn" id="stghcs_slide_btn">Learn More <i class="fa-solid fa-angle-right"></i></button>
             </div>
@@ -31,6 +34,7 @@
     </div>
     </div>
 
+</div>
 </div>
 
    <script>
@@ -54,8 +58,11 @@
         image.setAttribute("id", "slider_" + count);
     });
 
-    // Display the first slide img
-    gsap.to("#slider_"+currentIndex, { duration: 1, opacity: 1, x:"0" }); 
+    // Display the first slide
+    gsap.to("#slider_"+currentIndex, { duration: 1, opacity: 1, x:"0" });
+    stghcs_slideTitle.textContent = slideData(currentIndex).title;
+    stghcs_slideSub.textContent = slideData(currentIndex).subTitle;
+     stghcs_slideMessage.textContent = slideData(currentIndex).message;
    
 
     // On click next

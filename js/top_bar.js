@@ -34,12 +34,7 @@
            gsap.to(".stghcs_mobile_menu", { x: mobileMenu.offsetWidth, duration: 0.5,  onComplete: function(){mobileMenu.style.display="none"} }); 
         }
     });
-    
-    
-    //redirect to (target:Home)
-    stghcsLogo.addEventListener("click", function(){
-        window.location.replace("https://stgenevive.com");
-    });
+
     
     
     //set mobile menu to highest 
@@ -60,3 +55,22 @@
         }
     }
         }
+        
+//hide desktop menu dropdown on click outside
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the dropdown element and the button that triggers it
+    var dropdown = document.getElementById('collapseTwo');
+    var button = document.querySelector('[data-bs-target="#collapseTwo"]');
+
+    // Close the dropdown when clicking outside of it
+    document.addEventListener('click', function(event) {
+        var isClickInsideDropdown = dropdown.contains(event.target);
+        var isClickOnButton = button.contains(event.target);
+
+        if (!isClickInsideDropdown && !isClickOnButton) {
+            // Clicked outside the dropdown and the button, hide the dropdown
+            dropdown.classList.remove('show');
+        }
+    });
+});
+
