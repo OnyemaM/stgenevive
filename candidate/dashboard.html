@@ -22,12 +22,20 @@
 			a {
 				text-decoration: none;
 			}
-			/* #wrapper {
+			#wrapper {
 				display: flex;
 				padding: 20px;
 				gap: 20px;
-			} */
+				max-width: 100%; /* Ensures the container does not overflow the viewport width */
+			}
+
+			/* Fixed Sidebar */
 			.sidebar {
+				position: fixed;
+				top: 20px;
+				left: 20px;
+				width: 300px;
+				overflow-y: auto;
 				width: 300px;
 				height: 478px;
 				background-color: #fff;
@@ -36,6 +44,26 @@
 				padding: 20px;
 				text-align: center;
 			}
+
+			/* Main body */
+			.main-body {
+				flex-grow: 1;
+				margin-top: 0;
+				margin-left: 340px; /* Add margin to the left to make space for the sidebar */
+				max-width: calc(100% - 340px); /* Adjusts width to account for the sidebar */
+				overflow-y: auto; /* Enables vertical scrolling */
+			}
+
+			@media (max-width: 768px) {
+				#wrapper {
+					flex-direction: column;
+				}
+				.main-body {
+					margin-left: 0;
+					max-width: 100%;
+				}
+			}
+
 			.sidebar img {
 				width: 100px;
 				border-radius: 50%;
@@ -70,10 +98,6 @@
 				background-color: #e3e3e3;
 				border-radius: 10px;
 				color: #000;
-			}
-			.main-body {
-				flex-grow: 1;
-				margin-top: 0;
 			}
 
 			.user-info img {
@@ -167,6 +191,24 @@
 				</div>
 				<div class="my-5">
 					<h5 class="display-6 fs-5">Recent Applications</h5>
+					<div>
+						<div class="recent-jobs d-flex p-3 bg-white">
+							<img src="./images/logo.svg" alt="" class="d-none d-md-block" />
+							<div>
+								<h4 class="fw-bold">Direct Support Worker – Long Term Personal Care</h4>
+								<p class="lead">St. Genevive</p>
+							</div>
+						</div>
+						<div class="d-flex justify-content-between px-4 py-3 bg-white lead fs-6 border-top border-bottom" style="border-color: #ececec">
+							<span> <i class="bi bi-geo-alt"></i> Bossier City, LA</span>
+							<span>Posted 7 June 2023</span>
+						</div>
+						<div class="d-flex flex-column flex-md-row justify-content-between px-3 py-3 bg-white lead fs-6">
+							<span><span class="fw-bold">Application date:</span> 23 June 2023 </span>
+
+							<span><span class="fw-bold">Status:</span> Unsuccesful</span>
+						</div>
+					</div>
 					<div>
 						<div class="recent-jobs d-flex p-3 bg-white">
 							<img src="./images/logo.svg" alt="" class="d-none d-md-block" />
