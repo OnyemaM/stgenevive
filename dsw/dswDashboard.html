@@ -30,6 +30,7 @@
 				padding: 20px;
 				gap: 20px;
 				max-width: 100%; /* Ensures the container does not overflow the viewport width */
+				/* margin-top: 20px; */
 			}
 
 			/* Fixed Sidebar */
@@ -49,6 +50,7 @@
 				padding-top: 20px;
 				padding-bottom: 20px;
 				font-family: "Montserrat", sans-serif;
+				margin-top: 80px;
 			}
 
 			/* Main body */
@@ -121,23 +123,24 @@
 				font-size: 8px;
 				margin-bottom: 0;
 			}
-			.recent-jobs img {
-				margin-right: 15px;
-			}
-			.recent-jobs h3 {
-				font-weight: 900;
-				color: #172441;
-				margin-bottom: 0;
-				font-size: 32px;
-			}
-			.recent-jobs p {
-				color: #172441;
-				font-size: 18px;
-				margin-bottom: 0;
-			}
 		</style>
 	</head>
 	<body>
+		<div class="p-3 position-relative d-none d-md-block" style="background-color: #ffff66">
+			<div class="d-flex justify-content-between gap-4 gap-md-0 m-auto" style="color: #172441; width: 35%">
+				<div class="d-flex align-items-center gap-4">
+					<img src="./imgs/coins.svg" alt="" />
+					<div class="d-flex flex-column">
+						<span class="fs-6 fw-medium">You’ve earned 6 points</span>
+						<span style="font-size: 10px">You can use it on the storefront </span>
+					</div>
+				</div>
+				<div>
+					<button class="btn fw-medium px-5 py-2 w-100" style="background-color: #172441; color: #ffff66; font-size: 16px">Visit Store</button>
+				</div>
+			</div>
+			<i class="bi bi-x fs-3 position-absolute" style="right: 10px; top: 10px"></i>
+		</div>
 		<div id="wrapper" class="container mt-10 d-flex p-2 p-md-4 gap-4">
 			<!-- Sidebar -->
 			<div id="sidebar" class="sidebar d-none d-md-block">
@@ -156,19 +159,19 @@
 
 				<ul class="nav flex-column text-start" style="color: #172441; font-size: 16px">
 					<li class="nav-item">
-						<a class="nav-link active d-flex align-items-center gap-3" href="#" onclick="loadContent('home')">
+						<a class="nav-link active d-flex align-items-center gap-3" href="#">
 							<img src="./imgs/statistics.svg" alt="" style="width: 25px; height: 25px" />
 							<span>Overview</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link d-flex align-items-center gap-3" href="#" onclick="loadContent('applied')">
+						<a class="nav-link d-flex align-items-center gap-3" href="#">
 							<img src="./imgs/suitcase.svg" alt="" style="width: 25px; height: 25px" />
 							<span>Gigs</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link d-flex align-items-center gap-3" href="#" onclick="loadContent('saved')">
+						<a class="nav-link d-flex align-items-center gap-3" href="#">
 							<img src="./imgs//back-in-time.svg" alt="" style="width: 25px; height: 25px" />
 							<span>Timesheet</span>
 						</a>
@@ -185,8 +188,8 @@
 						<p class="lead">DIRECT SUPPORT</p>
 					</div>
 				</div>
-				<div class="header p-5 bg-white d-flex flex-column flex-row justify-content-between gap-4 gap-md-0" style="color: #172441">
-					<div class="d-flex flex-column flex-row align-items-center gap-4">
+				<div class="header p-5 bg-white d-flex flex-column flex-md-row justify-content-between gap-4 gap-md-0" style="color: #172441">
+					<div class="d-flex flex-column flex-md-row align-items-center gap-4">
 						<img src="./imgs/suitcases.svg" alt="" />
 						<div class="d-flex flex-column">
 							<span class="fs-3">You have <span class="fw-bold">0 active</span> gigs</span>
@@ -215,28 +218,5 @@
 		<!-- Bootstrap JS and dependencies -->
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
-		<script>
-			function loadContent(page) {
-				var mainBody = document.getElementById("main-body");
-				var filePath = page + ".html";
-
-				fetch(filePath)
-					.then((response) => response.text())
-					.then((data) => {
-						mainBody.innerHTML = data;
-					})
-					.catch((error) => {
-						console.error("Error loading content:", error);
-					});
-
-				// Remove the 'active' class from all nav-links
-				var navLinks = document.querySelectorAll(".nav-link");
-				navLinks.forEach((link) => link.classList.remove("active"));
-
-				// Add the 'active' class to the clicked nav-link
-				event.target.classList.add("active");
-			}
-		</script>
 	</body>
 </html>

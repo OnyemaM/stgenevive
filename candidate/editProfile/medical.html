@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Lato", sans-serif;
+      background-color: #e9e9e9;
+      /* padding-top: 70px;  */
+    }
+    a {
+      text-decoration: none;
+    }
+
+    .btn-color {
+      background-color: #33cc99;
+      color: #fff;
+      border-radius: 2px;
+    }
+
+    .btn-color:hover {
+      color: #33cc99;
+      background-color: transparent;
+    }
+
+    .bi-plus-circle-fill {
+      color: #33cc99;
+    }
+  </style>
+  <body>
+    <div class="container-fluid w-50 bg-white my-2">
+      <form id="medicalForm" class="px-2 py-4">
+        <!-- Allergies -->
+        <div class="form-group">
+          <label for="allergies" class="py-2 fw-bold">Allergies:</label>
+          <input type="text" class="form-control" id="allergies" name="allergies" required />
+        </div>
+
+        <!-- State -->
+        <div class="form-group">
+          <label for="medications" class="py-2 fw-bold">Current Medications:</label>
+          <input type="text" class="form-control" id="medications" name="medications" required />
+        </div>
+
+        <button type="submit" class="btn btn-color rounded-0 fs-6 mt-5 px-4">Save All Changes</button>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
