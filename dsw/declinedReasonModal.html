@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>User Dashboard</title>
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<!-- Bootstrap Icons CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+		<!-- Custom CSS -->
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				/* font-family: "Lato", sans-serif; */
+				font-family: "Montserrat", sans-serif;
+
+				background-color: #e9e9e9;
+			}
+			a {
+				text-decoration: none;
+			}
+			#wrapper {
+				display: flex;
+				padding: 20px;
+				gap: 20px;
+				max-width: 100%; /* Ensures the container does not overflow the viewport width */
+			}
+
+			/* Fixed Sidebar */
+			.sidebar {
+				position: fixed;
+				top: 20px;
+				left: 20px;
+				width: 300px;
+				overflow-y: auto;
+				width: 300px;
+				height: 478px;
+				background-color: #fff;
+				color: #000;
+				box-shadow: #cfcfcf 0px 0px 10px;
+				/* padding: 20px; */
+				text-align: center;
+				padding-top: 20px;
+				padding-bottom: 20px;
+				font-family: "Montserrat", sans-serif;
+			}
+
+			/* Main body */
+			.main-body {
+				flex-grow: 1;
+				margin-top: 0;
+				margin-left: 340px; /* Add margin to the left to make space for the sidebar */
+				max-width: calc(100% - 340px); /* Adjusts width to account for the sidebar */
+				overflow-y: auto; /* Enables vertical scrolling */
+			}
+
+			@media (max-width: 768px) {
+				#wrapper {
+					flex-direction: column;
+				}
+				.main-body {
+					margin-left: 0;
+					max-width: 100%;
+				}
+			}
+
+			.sidebar img {
+				width: 100px;
+				border-radius: 50%;
+				margin-bottom: 10px;
+			}
+			.sidebar h3 {
+				font-weight: 400;
+				color: #172441;
+				margin-bottom: 0;
+			}
+			.sidebar p {
+				margin-bottom: 20px;
+				color: #aeaeae;
+				letter-spacing: 5px;
+				font-size: 12px;
+			}
+			.nav {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			.nav li a {
+				color: #000;
+				font-size: 20px;
+			}
+			.nav-link {
+				padding: 10px 20px;
+				transition: all 0.3s ease-in-out;
+			}
+			.nav-link.active {
+				background-color: #d5dbe8;
+				color: #000;
+			}
+
+			#declineGigModal .modal-header {
+				border-bottom: 1px solid #dee2e6;
+			}
+
+			#declineGigModal .modal-footer {
+				border-top: 1px solid #dee2e6;
+			}
+
+			#declineGigModal .btn-success {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper" class="container mt-10 d-flex p-2 p-md-4 gap-4">
+			<!-- Sidebar -->
+			<div id="sidebar" class="sidebar d-none d-md-block">
+				<img src="./imgs/photo.png" alt="" />
+				<div>
+					<h3>Samantha Lewis</h3>
+					<p class="lead">DIRECT SUPPORT</p>
+				</div>
+				<div class="d-flex justify-content-between align-items-center" style="background-color: #e9e9e9; padding: 15px">
+					<div class="d-flex gap-2 align-items-center" style="color: #172441">
+						<img src="./imgs/coins.svg" alt="" style="width: 30px; height: 30px" />
+						<h4>6pts</h4>
+					</div>
+					<button class="btn btn-light" style="font-size: 12px">Breakdown</button>
+				</div>
+
+				<ul class="nav flex-column text-start" style="color: #172441; font-size: 16px">
+					<li class="nav-item">
+						<a class="nav-link active d-flex align-items-center gap-3" href="#">
+							<img src="./imgs/statistics.svg" alt="" style="width: 25px; height: 25px" />
+							<span>Overview</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-flex align-items-center gap-3" href="#">
+							<img src="./imgs/suitcase.svg" alt="" style="width: 25px; height: 25px" />
+							<span>Gigs</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-flex align-items-center gap-3" href="#">
+							<img src="./imgs//back-in-time.svg" alt="" style="width: 25px; height: 25px" />
+							<span>Timesheet</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Main Body -->
+			<div id="main-body" class="main-body">
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#declineGigModal">Decline Gig</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="declineGigModal" tabindex="-1" aria-labelledby="declineGigModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="declineGigModalLabel">Decline Gig</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<p>Please state reasons for declining this gig.</p>
+								<form>
+									<div class="form-check mb-2">
+										<input class="form-check-input" type="checkbox" value="familyEmergency" id="familyEmergency" />
+										<label class="form-check-label" for="familyEmergency"> Family Emergency </label>
+									</div>
+									<div class="form-check mb-2">
+										<input class="form-check-input" type="checkbox" value="acceptedByMistake" id="acceptedByMistake" />
+										<label class="form-check-label" for="acceptedByMistake"> Accepted by Mistake </label>
+									</div>
+									<div class="form-check mb-2">
+										<input class="form-check-input" type="checkbox" value="outOfProximity" id="outOfProximity" />
+										<label class="form-check-label" for="outOfProximity"> Out of proximity </label>
+									</div>
+									<div class="form-check mb-2">
+										<input class="form-check-input" type="checkbox" value="conflictWithAcceptedGig" id="conflictWithAcceptedGig" />
+										<label class="form-check-label" for="conflictWithAcceptedGig"> Conflict with already accepted Gig </label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="otherReasons" id="otherReasons" />
+										<label class="form-check-label" for="otherReasons"> Other reasons </label>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-success">Proceed</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap JS and dependencies -->
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+	</body>
+</html>
