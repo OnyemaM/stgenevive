@@ -31,6 +31,7 @@
 				height: 100%;
 				position: fixed;
 				overflow-y: scroll;
+				z-index: 1000;
 			}
 			.detail_modal_inner {
 				position: relative;
@@ -63,7 +64,7 @@
 	</head>
 	<body>
 		<button class="btn btn-secondary">Click me</button>
-		<div class="detail_modal" id="detail_modal">
+		<div class="detail_modal my-4" id="detail_modal">
 			<div class="detail_modal_inner">
 				<button class="detail_modal_closer"><i class="fa-solid fa-xmark"></i></button>
 
@@ -128,18 +129,10 @@
 					</div>
 
 					<div class="modal-footer">
-						<button type="button" class="btn btn-light" style="width: 100%">Close Detail</button>
+						<button type="button" class="btn btn-light detail_modal_closer" style="width: 100%">Close Detail</button>
 					</div>
 				</div>
 			</div>
-
-			<!--APPLIED MESSAGE-->
-			<div id="job_applied_message" class="mt-5 text-center" style="display: none">
-				<img style="height: 100px" src="https://lavenduct.com/stghs/assets/success.png" />
-				<div class="col-12 mt-1 h4 text-center fw-bold">Application Submitted</div>
-				<div class="col-12 h6 text-center fw-normal status_message">You will be contacted shortly.</div>
-			</div>
-			<!--APPLIED EMAIL MESSAGE END-->
 		</div>
 
 		<!-- Bootstrap JS and dependencies -->
