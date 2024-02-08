@@ -121,6 +121,42 @@
 				font-size: 8px;
 				margin-bottom: 0;
 			}
+			@media (max-width: 768px) {
+				.gig .gig-header p {
+					font-size: 10px !important;
+				}
+
+				.gig .gig-header h4 {
+					font-size: 16px !important;
+				}
+				.gig .gig-header .address {
+					font-size: 10px !important;
+				}
+
+				.clocking .name {
+					font-size: 10px !important;
+					line-height: 0;
+				}
+				.clocking .day {
+					font-size: 8px !important;
+				}
+				.clocking .dot {
+					width: 5% !important;
+					height: 5% !important;
+				}
+				.clocking .check {
+					width: 100% !important;
+					height: 100% !important;
+				}
+				.clocking .time {
+					font-family: "Open Sans", sans-serif !important;
+					font-size: 16px !important;
+					color: #c3c3c3;
+				}
+				.clocking .label {
+					font-size: 10px !important;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -208,8 +244,8 @@
 
 				<!-- Current Gig going on. -->
 				<span><span class="fw-bold">Today</span> - Jan 31, 2024</span>
-				<div class="mb-4 bg-white">
-					<div class="px-4 py-3" style="color: #172441">
+				<div class="gig mb-4 bg-white">
+					<div class="gig-header px-4 py-3" style="color: #172441">
 						<div class="d-flex flex-column align-items-flex-start gap-0">
 							<p class="fs-6 my-0">LONG-TERM PERSONAL CARE</p>
 							<h4 class="fw-bold my-0" style="font-size: 28px; color: #172441">Care for a 65-year old lady with dementia and hearing loss</h4>
@@ -220,24 +256,24 @@
 						</div>
 						<div class="d-flex gap-1 align-items-center mt-2">
 							<span><i class="bi bi-geo-fill"></i></span>
-							<span style="font-size: 12px; color: #172441">2250 Captain Sawyer Drive, Shreveport LA 71105-4350 USA</span>
+							<span class="address" style="font-size: 12px; color: #172441">2250 Captain Sawyer Drive, Shreveport LA 71105-4350 USA</span>
 						</div>
 						<div class="d-flex gap-1 align-items-center mt-2">
 							<span><i class="bi bi-telephone-fill"></i></span>
 							<span style="font-size: 12px; color: #172441">(893) 8929-3033</span>
 						</div>
 					</div>
-					<div class="py-3">
-						<div class="d-flex flex-column flex-md-row justify-content-between align-content-between gap-4 p-3 border-top border-bottom border-1">
-							<div class="d-flex align-items-center gap-3 bg-white">
+					<div class="clocking py-3">
+						<div class="d-flex justify-content-between align-content-between gap-md-4 p-3 border-top border-bottom border-1">
+							<div class="d-flex align-items-center gap-2 gap-md-3 bg-white">
 								<img src="./imgs/photo.png" alt="" height="40" width="40" />
-								<div class="d-flex flex-column">
-									<span class="fw-medium fs-5">Samantha Lewis Feloun</span>
-									<span><img src="./imgs/yellow-dot.svg" alt="" /><span class="lead fs-6"> Wednesday </span></span>
+								<div class="d-flex flex-column justify-content-center">
+									<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
+									<span><img src="./imgs/yellow-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
 								</div>
 							</div>
 							<div class="d-flex flex-column justify-content-center">
-								<h1 class="fw-light">07:47 <span class="fw-bold">AM</span></h1>
+								<h2 class="time fw-light">07:47 <span class="fw-bold">AM</span></h2>
 							</div>
 						</div>
 						<div class="p-3">
@@ -248,41 +284,41 @@
 				<!-- One clock In and Out section -->
 				<span><span class="fw-bold">Monday</span> - Jan 30, 2024</span>
 				<div class="mb-4 bg-white">
-					<div class="d-flex flex-column flex-md-row justify-content-between align-content-between gap-4 px-5 py-3 border-top border-bottom border-1">
-						<div class="d-flex align-items-center gap-3 bg-white">
+					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
+						<div class="d-flex align-items-center gap-2 gap-md-3 bg-white">
 							<img src="./imgs/photo.png" alt="" height="40" width="40" />
 							<div class="d-flex flex-column">
-								<span class="fw-medium fs-5">Samantha Lewis Feloun</span>
-								<span><img src="./imgs/green-dot.svg" alt="" /><span class="lead fs-6"> Wednesday </span></span>
+								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
+								<span><img src="./imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
 							</div>
 						</div>
 
-						<div class="d-flex align-items-center gap-5">
+						<div class="d-flex align-items-center gap-3 gap-md-5">
 							<div class="d-flex flex-column justify-content-center">
-								<span>Clocked In</span>
-								<h1 class="fw-light">07:00 <span class="fw-bold">AM</span></h1>
+								<span class="label">Clocked In</span>
+								<h2 class="fw-light">07:00 <span class="fw-bold">AM</span></h2>
 							</div>
 							<div>
-								<img src="./imgs//accepted.svg" alt="" height="45" width="45" />
+								<img src="./imgs//accepted.svg" alt="" class="check" height="40" width="40" />
 							</div>
 						</div>
 					</div>
-					<div class="d-flex flex-column flex-md-row justify-content-between align-content-between gap-4 px-5 py-3 border-top border-bottom border-1">
+					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
 						<div class="d-flex align-items-center gap-3 bg-white">
 							<img src="./imgs/photo.png" alt="" height="40" width="40" />
 							<div class="d-flex flex-column">
-								<span class="fw-medium fs-5">Samantha Lewis Feloun</span>
-								<span><img src="./imgs/green-dot.svg" alt="" /><span class="lead fs-6"> Wednesday </span></span>
+								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
+								<span><img src="./imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
 							</div>
 						</div>
 
-						<div class="d-flex align-items-center gap-5">
+						<div class="d-flex align-items-center gap-3 gap-md-5">
 							<div class="d-flex flex-column justify-content-center">
-								<span>Clocked Out</span>
-								<h1 class="fw-light">05:04 <span class="fw-bold">PM</span></h1>
+								<span class="label">Clocked Out</span>
+								<h2 class="fw-light">05:04 <span class="fw-bold">PM</span></h2>
 							</div>
 							<div>
-								<img src="./imgs//accepted.svg" alt="" height="45" width="45" />
+								<img src="./imgs//accepted.svg" alt="" height="40" width="40" class="check" />
 							</div>
 						</div>
 					</div>
@@ -291,41 +327,41 @@
 				<!-- Another clock In and Out section -->
 				<span><span class="fw-bold">Sunday</span> - Jan 29, 2024</span>
 				<div class="mb-4 bg-white">
-					<div class="d-flex flex-column flex-md-row justify-content-between align-content-between gap-4 px-5 py-3 border-top border-bottom border-1">
-						<div class="d-flex align-items-center gap-3 bg-white">
+					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
+						<div class="d-flex align-items-center gap-2 gap-md-3 bg-white">
 							<img src="./imgs/photo.png" alt="" height="40" width="40" />
 							<div class="d-flex flex-column">
-								<span class="fw-medium fs-5">Samantha Lewis Feloun</span>
-								<span><img src="./imgs/green-dot.svg" alt="" /><span class="lead fs-6"> Wednesday </span></span>
+								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
+								<span><img src="./imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
 							</div>
 						</div>
 
-						<div class="d-flex align-items-center gap-5">
+						<div class="d-flex align-items-center gap-3 gap-md-5">
 							<div class="d-flex flex-column justify-content-center">
-								<span>Clocked In</span>
-								<h1 class="fw-light">06:50 <span class="fw-bold">AM</span></h1>
+								<span class="label">Clocked In</span>
+								<h2 class="fw-light">06:50 <span class="fw-bold">AM</span></h2>
 							</div>
 							<div>
-								<img src="./imgs//accepted.svg" alt="" height="45" width="45" />
+								<img src="./imgs//accepted.svg" alt="" class="check" height="40" width="40" />
 							</div>
 						</div>
 					</div>
-					<div class="d-flex flex-column flex-md-row justify-content-between align-content-between gap-4 px-5 py-3 border-top border-bottom border-1">
+					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
 						<div class="d-flex align-items-center gap-3 bg-white">
 							<img src="./imgs/photo.png" alt="" height="40" width="40" />
 							<div class="d-flex flex-column">
-								<span class="fw-medium fs-5">Samantha Lewis Feloun</span>
-								<span><img src="./imgs/green-dot.svg" alt="" /><span class="lead fs-6"> Wednesday </span></span>
+								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
+								<span><img src="./imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
 							</div>
 						</div>
 
-						<div class="d-flex align-items-center gap-5">
+						<div class="d-flex align-items-center gap-3 gap-md-5">
 							<div class="d-flex flex-column justify-content-center">
-								<span>Clocked Out</span>
-								<h1 class="fw-light">05:07 <span class="fw-bold">PM</span></h1>
+								<span class="label">Clocked Out</span>
+								<h2 class="fw-light">05:07 <span class="fw-bold">PM</span></h2>
 							</div>
 							<div>
-								<img src="./imgs//accepted.svg" alt="" height="45" width="45" />
+								<img src="./imgs//accepted.svg" alt="" height="40" width="40" class="check" />
 							</div>
 						</div>
 					</div>
