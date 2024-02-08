@@ -38,13 +38,30 @@
 			transition: all 0.3s ease-in-out;
 		}
 		.nav-link.active {
-			background-color: #e3e3e3;
+			background-color: #d5dbe8;
 			border-radius: 10px;
 			color: #000;
 		}
+
+		/* .sidebar img {
+			width: 100px;
+			border-radius: 50%;
+			margin-bottom: 10px;
+		}
+		.sidebar h3 {
+			font-weight: 400;
+			color: #172441;
+			margin-bottom: 0;
+		}
+		.sidebar p {
+			margin-bottom: 20px;
+			color: #aeaeae;
+			letter-spacing: 5px;
+			font-size: 12px;
+		} */
 	</style>
 	<body>
-		<div class="accordion w-25" id="accordionExample">
+		<!-- <div class="accordion w-25" id="accordionExample">
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="headingOne">
 					<button
@@ -75,6 +92,61 @@
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">Saved</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+		<div class="accordion w-25" id="accordionExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingOne">
+					<button
+						class="accordion-button"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#collapseOne"
+						aria-expanded="true"
+						aria-controls="collapseOne"
+					>
+						<div class="d-flex align-items-center gap-2">
+							<img src="./images/pic.png" alt="" width="70px" height="70px" />
+							<div class="pt-4 mt-0">
+								<h3 style="font-size: 20px">Samantha Lewis</h3>
+								<p class="lead" style="font-size: 12px">DIRECT SUPPORT</p>
+							</div>
+						</div>
+					</button>
+				</h2>
+				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<div class="d-flex justify-content-between align-items-center" style="background-color: #e9e9e9; padding: 15px">
+							<div class="d-flex gap-2 align-items-center" style="color: #172441">
+								<img src="./imgs/coins.svg" alt="" style="width: 30px; height: 30px" />
+								<h4>6pts</h4>
+							</div>
+							<button class="btn btn-light" style="font-size: 12px">Storefront</button>
+						</div>
+
+						<ul class="nav flex-column text-start" style="color: #172441; font-size: 16px">
+							<li class="nav-item">
+								<a class="nav-link active d-flex align-items-center gap-3" href="#">
+									<img src="./imgs/statistics.svg" alt="" style="width: 25px; height: 25px" />
+									<span>Overview</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link d-flex align-items-center gap-3" href="#">
+									<img src="./imgs/suitcase.svg" alt="" style="width: 25px; height: 25px" />
+									<span>Gigs</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link d-flex align-items-center gap-3" href="#">
+									<img src="./imgs//back-in-time.svg" alt="" style="width: 25px; height: 25px" />
+									<span>Timesheet</span>
+								</a>
 							</li>
 						</ul>
 					</div>
