@@ -20,13 +20,12 @@
 				padding: 0;
 			}
 			body {
-				/* font-family: "Lato", sans-serif; */
 				font-family: "Montserrat", sans-serif;
 				background-color: #e9e9e9;
 				color: #172441;
 			}
 
-			.out_range_modal {
+			.incident_report_modal {
 				display: none;
 				width: 100%;
 				background: #0000001e;
@@ -34,7 +33,7 @@
 				position: fixed;
 				overflow-y: scroll;
 			}
-			.out_range_modal_inner {
+			.incident_report_modal_inner {
 				position: relative;
 				max-width: 600px;
 				min-height: 300px;
@@ -43,7 +42,7 @@
 				margin-top: 50px;
 				padding: 20px;
 			}
-			.out_range_modal_closer {
+			.incident_report_modal_closer {
 				width: 50px;
 				height: 50px;
 				position: absolute;
@@ -56,32 +55,19 @@
 			}
 
 			@media (max-width: 600px) {
-				.out_range_modal_inner {
+				.incident_report_modal_inner {
 					width: 95%;
 					top: 10px;
 				}
 			}
-
-			/* .out_range-icon {
-				position: absolute;
-				bottom: 3px;
-				right: 3px;
-				background-color: red;
-				color: #fff;
-				border-radius: 50%;
-				border: 2px solid white;
-			} */
 		</style>
 	</head>
 	<body>
 		<button class="btn btn-secondary">Click me</button>
-		<div class="out_range_modal" id="out_range_modal">
-			<!--Out_range Gig-->
-
-			<div class="out_range_modal_inner">
-				<div id="out_range">
+		<div class="incident_report_modal" id="incident_report_modal">
+			<div class="incident_report_modal_inner">
+				<div id="incident_report">
 					<div class="modal-header pb-3">
-						<!-- <h5 class="modal-title" style="font-size: 32px">Out of Range</h5> -->
 						<div class="d-flex align-items-center">
 							<img src="./imgs//petition.svg" alt="Report Icon" class="header-icon me-2" />
 							<div class="d-flex flex-column" style="color: #172441">
@@ -89,9 +75,9 @@
 								<span class="fw-light">Report a work incident</span>
 							</div>
 						</div>
-						<button class="out_range_modal_closer"><i class="fa-solid fa-xmark fs-3"></i></button>
+						<button class="incident_report_modal_closer"><i class="fa-solid fa-xmark fs-3"></i></button>
 					</div>
-					<div class="row" id="out_range_content">
+					<div class="row" id="incident_report_content">
 						<div class="py-3" style="color: #172441">
 							<div class="d-flex flex-column align-items-flex-start gap-0">
 								<p class="my-0" style="font-size: 12px">LONG-TERM PERSONAL CARE</p>
@@ -127,7 +113,7 @@
 				let btn = document.querySelector(".btn-secondary");
 
 				// Get the modal by its ID
-				let modal = document.getElementById("out_range_modal");
+				let modal = document.getElementById("incident_report_modal");
 
 				// Listen for a click event on the button
 				btn.addEventListener("click", function () {
@@ -136,7 +122,7 @@
 				});
 
 				// Optional: Listen for a click event on the modal's close button to hide the modal
-				let closeButton = document.querySelector(".out_range_modal_closer");
+				let closeButton = document.querySelector(".incident_report_modal_closer");
 				closeButton.addEventListener("click", function () {
 					modal.style.display = "none";
 				});
