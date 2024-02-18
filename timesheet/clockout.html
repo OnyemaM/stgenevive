@@ -8,6 +8,8 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 		<!-- Bootstrap Icons CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+		<!-- MCDatepicker CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" rel="stylesheet" />
 		<!-- Custom CSS -->
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
@@ -205,7 +207,14 @@
 					<span style="font-size: 24px; font-weight: 600">Timesheet</span>
 				</div>
 				<div class="d-flex align-items-center flex-nowrap gap-2 mb-4">
-					<div class="dropdown">
+					<div style="width: 5%">
+						<input id="date_input" type="text" class="d-none" />
+						<button class="btn btn-success" type="button" id="date_picker_trigger">
+							<i class="bi bi-calendar3"></i>
+						</button>
+					</div>
+
+					<!-- <div class="dropdown">
 						<button
 							class="btn btn-secondary dropdown-toggle shadow-sm rounded-5"
 							style="background-color: #172441"
@@ -221,7 +230,7 @@
 							<li><a class="dropdown-item" href="#">Week 2</a></li>
 							<li><a class="dropdown-item" href="#">Week 3</a></li>
 						</ul>
-					</div>
+					</div> -->
 					<div class="d-flex flex-nowrap gap-2 overflow-auto p-md-3 py-4">
 						<div class="d-flex align-items-center justify-content-center py-2 gap-2 shadow-sm bg-white" style="border-radius: 40px; min-width: 120px">
 							<img src="./imgs/accepted.svg" alt="" /> <span>Week 1</span>
@@ -414,5 +423,48 @@
 		<!-- Bootstrap JS and dependencies -->
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"></script>
+
+		<script>
+			//session input
+			let datepicker = MCDatepicker.create({
+				el: "#date_input",
+				dateFormat: "YYYY-MM-DD",
+				bodyType: "inline",
+				showCalendarDisplay: false,
+				customOkBTN: "OK",
+				customClearBTN: "Clear",
+				customCancelBTN: "CANCEL",
+				closeOnBlur: true,
+				theme: {
+					theme_color: "#33CC99",
+				},
+			});
+
+			// // Trigger the datepicker when the button is clicked
+			// document.getElementById("date_picker_trigger").addEventListener("click", function () {
+			// 	datepicker.open();
+			// });
+			document.getElementById("date_picker_trigger").addEventListener("click", function () {
+				// Open the datepicker
+				datepicker.open();
+
+				// Wait for the calendar to be visible in the DOM
+				setTimeout(() => {
+					const calendarElement = document.querySelector(".mc-calendar"); // Adjust the selector based on actual class or ID
+					if (calendarElement) {
+						const buttonRect = this.getBoundingClientRect();
+						calendarElement.style.position = "absolute";
+						calendarElement.style.top = `${buttonRect.bottom}px`; // Position at the bottom of the button
+						calendarElement.style.left = `${buttonRect.left}px`; // Align with the left of the button
+					}
+				}, 10); // Adjust timeout as necessary
+			});
+
+			// Setup onSelect event
+			datepicker.onSelect((date, formatedDate) => {
+				console.log("Selected date: " + formatedDate); // Use formatedDate for a formatted string
+			});
+		</script>
 	</body>
 </html>
