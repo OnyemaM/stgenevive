@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Assignment</title>
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<!-- Bootstrap Icons CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+		<!-- Custom CSS -->
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				/* font-family: "Lato", sans-serif; */
+				font-family: "Montserrat", sans-serif;
+
+				background-color: #e9e9e9;
+			}
+			a {
+				text-decoration: none;
+			}
+			#wrapper {
+				display: flex;
+				padding: 20px;
+				gap: 20px;
+				max-width: 100%;
+			}
+
+			/* Fixed Sidebar */
+			.sidebar {
+				position: fixed;
+				top: 20px;
+				left: 20px;
+				width: 300px;
+				overflow-y: auto;
+				width: 300px;
+				height: auto;
+				background-color: #fff;
+				color: #000;
+				box-shadow: #cfcfcf 0px 0px 10px;
+				/* padding: 20px; */
+				text-align: center;
+				padding-top: 20px;
+				padding-bottom: 20px;
+				font-family: "Montserrat", sans-serif;
+			}
+
+			/* Main body */
+			.main-body {
+				flex-grow: 1;
+				margin-top: 0;
+				margin-left: 340px;
+				max-width: calc(100% - 340px);
+				overflow-y: auto;
+			}
+
+			@media (max-width: 768px) {
+				#wrapper {
+					flex-direction: column;
+				}
+				.main-body {
+					margin-left: 0;
+					max-width: 100%;
+				}
+			}
+
+			.sidebar img {
+				width: 100px;
+				border-radius: 50%;
+				margin-bottom: 10px;
+			}
+			.sidebar h3 {
+				font-weight: 400;
+				color: #172441;
+				margin-bottom: 0;
+			}
+			.sidebar p {
+				margin-bottom: 20px;
+				color: #aeaeae;
+				letter-spacing: 5px;
+				font-size: 12px;
+			}
+			.nav {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			.nav li a {
+				color: #000;
+				font-size: 20px;
+			}
+			.nav-link {
+				padding: 10px 20px;
+				transition: all 0.3s ease-in-out;
+			}
+			.nav-link.active {
+				background-color: #d5dbe8;
+				color: #000;
+			}
+
+			.job-button {
+				background-color: #fff;
+				border: 2px solid #000;
+				border-radius: 5px;
+			}
+			.status-badge {
+				color: #fff;
+				padding: 5px 40px 5px 20px;
+				border-radius: 20px;
+				display: inline-flex;
+				align-items: center;
+				position: relative;
+			}
+			.status-badge img {
+				border-radius: 50%;
+				position: absolute;
+				right: -5px;
+				border: 2px solid white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper" class="container mt-10 d-flex p-2 p-md-4 gap-4">
+			<!-- Sidebar -->
+			<div id="sidebar" class="sidebar d-none d-md-block">
+				<img src="./imgs/photo.png" alt="" />
+				<div>
+					<h3>Maxwell Fola</h3>
+					<p class="lead">SUPERVISOR</p>
+				</div>
+				<div class="d-flex justify-content-between align-items-center" style="background-color: #e9e9e9; padding: 15px">
+					<div class="d-flex gap-2 align-items-center" style="color: #172441">
+						<img src="../dsw/imgs/coins.svg" alt="" style="width: 30px; height: 30px" />
+						<h4>6pts</h4>
+					</div>
+					<button class="btn btn-light" style="font-size: 12px">Storefront</button>
+				</div>
+
+				<ul class="nav flex-column text-start" style="color: #172441; font-size: 16px">
+					<li class="nav-item">
+						<a class="nav-link d-flex align-items-center gap-3" href="#">
+							<img src="../dsw/imgs/statistics.svg" alt="" style="width: 25px; height: 25px" />
+							<span>Overview</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-flex align-items-center gap-3" href="#">
+							<img src="../dsw/imgs/suitcase.svg" alt="" style="width: 25px; height: 25px" />
+							<span>My Teams</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active d-flex align-items-center gap-3" href="#">
+							<img src="../dsw/imgs/suitcase.svg" alt="" style="width: 25px; height: 25px" />
+							<span>Assignments</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-flex align-items-center gap-3" href="#">
+							<img src="../dsw/imgs/suitcase.svg" alt="" style="width: 25px; height: 25px" />
+							<span>Gigs</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-flex align-items-center gap-3" href="#">
+							<img src="../dsw/imgs/suitcase.svg" alt="" style="width: 25px; height: 25px" />
+							<span>Timesheet</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Main Body -->
+			<div id="main-body" class="main-body">
+				<div class="d-flex align-items-center gap-3 p-3">
+					<img src="./imgs/school-note.svg" alt="" width="40" height="40" />
+					<h4 class="pt-2">Assignment</h4>
+				</div>
+				<div class="bg-white d-flex justify-content-between align-items-center p-3">
+					<div class="d-flex align-items-center gap-3">
+						<img src="../dsw//imgs/photo.png" alt="" width="40" height="40" />
+						<h4 class="pt-2">Morris Johnson</h4>
+					</div>
+					<div class="d-flex align-items-center gap-3">
+						<span>2 GIGS ASSIGNED </span>
+					</div>
+				</div>
+				<!-- Sample of listed Gigs (Is default) -->
+				<div class="my-4 bg-white p-3" style="color: #172441">
+					<div class="d-flex flex-column align-items-flex-start gap-0 p-3">
+						<p class="fs-5 my-0">LONG-TERM PERSONAL CARE</p>
+						<h5 class="fw-bold my-0" style="font-size: 28px; color: #172441">Care for a 65-year old lady with dementia and hearing loss</h5>
+					</div>
+					<div class="border-top border-2 d-flex justify-content-between p-4 pt-4 gap-1 h-1 align-items-center" style="color: #172441">
+						<div class="d-flex align-items-center gap-2">
+							<i class="bi bi-geo-alt"></i>
+							<span>Shreveport, LA</span>
+						</div>
+						<span>1 day</span>
+					</div>
+					<div class="border-top border-2 p-4 pt-4 gap-1 h-1 align-items-center">
+						<p style="font-size: 16px">
+							Direct Support Worker to provide care and assistance to a 65-year-old client living with dementia in Louisiana. As a vital member of our
+							team, you will play a crucial role in enhancing the quality of life for our client by offering personalized support and companionship.
+						</p>
+						<div class="d-flex justify-content-between align-content-between gap-4">
+							<div class="d-flex align-items-center gap-4">
+								<button class="btn px-3 py-2 btn-light border-1 border-black">View Details</button>
+							</div>
+							<span class="d-flex align-items-center gap-2 rounded-5 text-white px-3 py-2" style="background-color: #ffab2e">Listed</span>
+						</div>
+					</div>
+				</div>
+				<!-- Sample of accepted Gigs (Is default) -->
+				<div class="my-4 bg-white p-3" style="color: #172441">
+					<div class="d-flex flex-column align-items-flex-start gap-0 p-3">
+						<p class="fs-5 my-0">LONG-TERM PERSONAL CARE</p>
+						<h5 class="fw-bold my-0" style="font-size: 28px; color: #172441">Care for a 65-year old lady with dementia and hearing loss</h5>
+					</div>
+					<div class="border-top border-2 d-flex justify-content-between p-4 pt-4 gap-1 h-1 align-items-center" style="color: #172441">
+						<div class="d-flex align-items-center gap-2">
+							<i class="bi bi-geo-alt"></i>
+							<span>Shreveport, LA</span>
+						</div>
+						<span>1 day</span>
+					</div>
+					<div class="border-top border-2 p-4 pt-4 gap-1 h-1 align-items-center">
+						<p style="font-size: 16px">
+							Direct Support Worker to provide care and assistance to a 65-year-old client living with dementia in Louisiana. As a vital member of our
+							team, you will play a crucial role in enhancing the quality of life for our client by offering personalized support and companionship.
+						</p>
+						<div class="d-flex justify-content-between align-content-between gap-4">
+							<div class="d-flex align-items-center gap-4">
+								<button class="btn px-3 py-2 btn-light border-1 border-black">View Details</button>
+							</div>
+							<span class="status-badge" style="background-color: #33cc99">
+								Accepted
+								<img src="../timesheet/imgs/photo.png" alt="Profile Picture" width="30" height="30" />
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap JS and dependencies -->
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+	</body>
+</html>
