@@ -103,6 +103,48 @@
 				background-color: #d5dbe8;
 				color: #000;
 			}
+			.clocking .img {
+				height: 40px !important;
+				width: 40px !important;
+			}
+			@media (max-width: 768px) {
+				.gig .gig-header p {
+					font-size: 10px !important;
+				}
+
+				.gig .gig-header h4 {
+					font-size: 16px !important;
+				}
+				.gig .gig-header .address {
+					font-size: 10px !important;
+				}
+
+				.clocking .name {
+					font-size: 10px !important;
+					line-height: 0;
+				}
+
+				.clocking .img {
+					height: 30px !important;
+					width: 30px !important;
+				}
+				.clocking .day {
+					font-size: 8px !important;
+				}
+				.clocking .dot {
+					width: 5% !important;
+					height: 5% !important;
+				}
+
+				.clocking .time {
+					font-family: "Open Sans", sans-serif !important;
+					font-size: 12px !important;
+					color: #c3c3c3;
+				}
+				.clocking .label {
+					font-size: 10px !important;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -130,7 +172,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active d-flex gap-3" href="#">
+						<a class="nav-link d-flex gap-3" href="#">
 							<img src="./imgs/hands.svg" alt="" style="width: 25px; height: 25px" />
 							<span>My Teams</span>
 						</a>
@@ -148,7 +190,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link d-flex gap-3" href="#">
+						<a class="nav-link active d-flex gap-3" href="#">
 							<img src="../dsw/imgs/suitcase.svg" alt="" style="width: 25px; height: 25px" />
 							<span>Timesheet</span>
 						</a>
@@ -163,7 +205,7 @@
 					<span style="font-size: 24px">My Team -<span class="fw-bold"> Timesheet</span></span>
 				</div>
 				<div class="d-flex align-items-center flex-nowrap gap-2 mb-4">
-					<div style="width: 5%">
+					<div style="width: 80px">
 						<input id="date_input" type="text" class="d-none" />
 						<button class="btn btn-success" type="button" id="date_picker_trigger">
 							<i class="bi bi-calendar3"></i>
@@ -171,7 +213,7 @@
 					</div>
 					<div class="d-flex flex-nowrap gap-2 overflow-auto p-md-3 py-4">
 						<div class="d-flex align-items-center justify-content-center py-2 gap-2 shadow-sm bg-white" style="border-radius: 40px; min-width: 120px">
-							<img src="./imgs/accepted.svg" alt="" /> <span>Week 1</span>
+							<img src="../timesheet/imgs//accepted.svg" alt="" /> <span>Week 1</span>
 						</div>
 						<div class="d-flex align-items-center justify-content-center py-2 gap-2 shadow-sm bg-white" style="border-radius: 40px; min-width: 120px">
 							<img src="./imgs/accepted.svg" alt="" /> <span>Week 2</span>
@@ -218,7 +260,7 @@
 				<div class="mb-4 bg-white">
 					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
 						<div class="d-flex align-items-center gap-2 gap-md-3 bg-white">
-							<img src="../timesheet/imgs/photo.png" alt="" height="40" width="40" />
+							<img src="../timesheet/imgs/photo.png" alt="" class="img" />
 							<div class="d-flex flex-column">
 								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
 								<span><img src="../timesheet/imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
@@ -231,13 +273,22 @@
 								<h2 class="fw-light">07:00 <span class="fw-bold">AM</span></h2>
 							</div>
 							<div>
-								<img src="../timesheet/imgs//accepted.svg" alt="" class="check" height="40" width="40" />
+								<img src="../timesheet/imgs//accepted.svg" alt="" class="img" />
 							</div>
-							<span><i class="bi bi-three-dots-vertical"></i></span>
+							<div class="dropdown">
+								<span class="" style="cursor: pointer" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="bi bi-three-dots-vertical"></i>
+								</span>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									<li><a class="dropdown-item" href="#">Add a remark</a></li>
+									<li><a class="dropdown-item" href="#">Flag action</a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<div class="px-2 px-md-4 py-2 gap-1 align-items-center" style="background-color: #ffffb8">
-						<div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+					<!-- List Incident Reports here -->
+					<div class="px-2 px-md-5 py-2 gap-1 align-items-center" style="background-color: #ffffb8">
+						<div class="d-flex justify-content-between align-items-center">
 							<div class="d-flex align-items-center gap-3">
 								<img src="../timesheet/imgs/petition.svg" alt="Report Icon" style="width: 50px; height: 50px" />
 								<span class="fw-bold fs-5" style="color: #172441">Incident Report</span>
@@ -250,9 +301,24 @@
 							</button>
 						</div>
 					</div>
+					<!-- List Remark here -->
+					<div class="px-2 px-md-5 py-2 gap-1 align-items-center" style="background-color: #ffffb8">
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="d-flex align-items-center gap-3">
+								<img src="./imgs/remark-icon.svg" alt="Report Icon" style="width: 50px; height: 50px" />
+								<span class="fw-bold fs-5" style="color: #172441">Remarks</span>
+							</div>
+							<button
+								class="btn d-flex align-items-center gap-2 rounded-2 text-white px-3 py-2 justify-content-center"
+								style="background-color: #172441"
+							>
+								View
+							</button>
+						</div>
+					</div>
 					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
 						<div class="d-flex align-items-center gap-2 gap-md-3 bg-white">
-							<img src="../timesheet/imgs/photo.png" alt="" height="40" width="40" />
+							<img src="../timesheet/imgs/photo.png" alt="" class="img" />
 							<div class="d-flex flex-column">
 								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
 								<span><img src="../timesheet/imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
@@ -261,11 +327,11 @@
 
 						<div class="d-flex align-items-center gap-3 gap-md-5">
 							<div class="d-flex flex-column justify-content-center">
-								<span class="label">Clocked In</span>
+								<span class="label">Clocked Out</span>
 								<h2 class="fw-light">07:00 <span class="fw-bold">AM</span></h2>
 							</div>
 							<div>
-								<img src="../timesheet/imgs//accepted.svg" alt="" class="check" height="40" width="40" />
+								<img src="./imgs/flag-icon.svg" alt="" class="img" />
 							</div>
 							<span><i class="bi bi-three-dots-vertical"></i></span>
 						</div>
@@ -277,7 +343,7 @@
 				<div class="mb-4 bg-white">
 					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
 						<div class="d-flex align-items-center gap-2 gap-md-3 bg-white">
-							<img src="../timesheet/imgs/photo.png" alt="" height="40" width="40" />
+							<img src="../timesheet/imgs/photo.png" alt="" class="img" />
 							<div class="d-flex flex-column">
 								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
 								<span><img src="../timesheet/imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
@@ -290,14 +356,14 @@
 								<h2 class="fw-light">07:00 <span class="fw-bold">AM</span></h2>
 							</div>
 							<div>
-								<img src="../timesheet/imgs//accepted.svg" alt="" class="check" height="40" width="40" />
+								<img src="../timesheet/imgs//accepted.svg" alt="" class="img" />
 							</div>
 							<span><i class="bi bi-three-dots-vertical"></i></span>
 						</div>
 					</div>
 					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
 						<div class="d-flex align-items-center gap-3 bg-white">
-							<img src="../timesheet/imgs/photo.png" alt="" height="40" width="40" />
+							<img src="../timesheet/imgs/photo.png" alt="" class="img" />
 							<div class="d-flex flex-column">
 								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
 								<span><img src="../timesheet/imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
@@ -310,7 +376,7 @@
 								<h2 class="fw-light">05:04 <span class="fw-bold">PM</span></h2>
 							</div>
 							<div>
-								<img src="../timesheet/imgs//accepted.svg" alt="" height="40" width="40" class="check" />
+								<img src="../timesheet/imgs//accepted.svg" alt="" class="img" />
 							</div>
 							<span><i class="bi bi-three-dots-vertical"></i></span>
 						</div>
@@ -322,7 +388,7 @@
 				<div class="mb-4 bg-white">
 					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
 						<div class="d-flex align-items-center gap-2 gap-md-3 bg-white">
-							<img src="../timesheet/imgs/photo.png" alt="" height="40" width="40" />
+							<img src="../timesheet/imgs/photo.png" alt="" class="img" />
 							<div class="d-flex flex-column">
 								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
 								<span><img src="../timesheet/imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
@@ -335,14 +401,14 @@
 								<h2 class="fw-light">06:50 <span class="fw-bold">AM</span></h2>
 							</div>
 							<div>
-								<img src="../timesheet/imgs//accepted.svg" alt="" class="check" height="40" width="40" />
+								<img src="../timesheet/imgs//accepted.svg" alt="" class="img" />
 							</div>
 							<span><i class="bi bi-three-dots-vertical"></i></span>
 						</div>
 					</div>
 					<div class="clocking d-flex justify-content-between align-content-between gap-4 px-2 px-md-5 py-3 border-top border-bottom border-1">
 						<div class="d-flex align-items-center gap-3 bg-white">
-							<img src="../timesheet/imgs/photo.png" alt="" height="40" width="40" />
+							<img src="../timesheet/imgs/photo.png" alt="" class="img" />
 							<div class="d-flex flex-column">
 								<span class="name fw-medium fs-5">Samantha Lewis Feloun</span>
 								<span><img src="../timesheet/imgs/green-dot.svg" alt="" class="dot" /><span class="day lead fs-6"> Wednesday </span></span>
@@ -355,7 +421,7 @@
 								<h2 class="fw-light">05:07 <span class="fw-bold">PM</span></h2>
 							</div>
 							<div>
-								<img src="../timesheet/imgs//accepted.svg" alt="" height="40" width="40" class="check" />
+								<img src="../timesheet/imgs//accepted.svg" alt="" class="img" />
 							</div>
 							<span><i class="bi bi-three-dots-vertical"></i></span>
 						</div>
