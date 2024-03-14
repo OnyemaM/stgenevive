@@ -22,6 +22,7 @@
 			a {
 				text-decoration: none;
 			}
+
 			#wrapper {
 				display: flex;
 				padding: 20px;
@@ -170,28 +171,28 @@
 				</div>
 				<div class="profile-tabs p-3">
 					<p class="py-2">Complete your profile to stand a greater chance at getting hired.</p>
-					<div class="row row-cols-2 row-cols-md-4 gap-2 p-md-2">
-						<div class="col-5 col-md-2 bg-white rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
+					<div class="gap-2 p-md-2 d-flex flex-wrap" style="font-size: 15px">
+						<a href="" class="bg-white text-black rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
 							<img src="./images/phone.svg" alt="" /> Contacts <i class="bi bi-check2 text-success"></i>
-						</div>
+						</a>
 
-						<div class="col-5 col-md-2 bg-white rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
+						<a href="" class="bg-white text-black rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
 							<img src="./images/graduation-cap.svg" alt="" /> Education <i class="bi bi-check2 text-success"></i>
-						</div>
+						</a>
 
-						<div class="col-5 col-md-2 bg-white rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
+						<a href="" class="bg-white text-black rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
 							<img src="./images/syringe.svg" alt="" /> Medical <i class="bi bi-check2 text-success"></i>
-						</div>
+						</a>
 
-						<div class="col-6 col-md-3 bg-white rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
+						<a href="" class="bg-white text-black rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
 							<img src="./images/camera.svg" alt="" /> Profile Picture <i class="bi bi-x-lg text-danger"></i>
-						</div>
+						</a>
 					</div>
 					<a href="./editProfile.html" class="btn btn-success rounded-0 fs-6 mt-5 px-4">Manage Profile</a>
 				</div>
 				<div class="my-5">
 					<h5 class="display-6 fs-5">Recent Applications</h5>
-					<div>
+					<!-- <div>
 						<div class="recent-jobs d-flex p-3 bg-white">
 							<img src="./images/logo.svg" alt="" class="d-none d-md-block" />
 							<div>
@@ -226,7 +227,7 @@
 
 							<span><span class="fw-bold">Status:</span> Unsuccesful</span>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -259,3 +260,40 @@
 		</script>
 	</body>
 </html>
+
+<!-- <div class="pt-2 pb-4 px-3" style="background-color: #f6f6f6">
+	<p class="py-1" style="font-size: 14px">Complete your profile to stand a greater chance at getting hired.</p>
+	<div class="gap-2 p-md-2 d-flex flex-wrap" style="font-size: 15px">
+		<a href="{% url 'applicants:manage-profile' %}" class="bg-white text-black rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
+			<img src="{% static 'images/phone.svg' %}" alt="" /> Contacts <i class="bi bi-check2 text-success"></i>
+		</a>
+
+		<a href="{% url 'applicants:update-education' %}" class="bg-white text-black rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
+			<img src="{% static 'images/graduation-cap.svg' %}" alt="" />
+			Education {% if education|length <= 0 %}
+			<i class="bi bi-x-lg text-danger"></i>
+			{% else %}
+			<i class="bi bi-check2 text-success"></i>
+			{% endif %}
+		</a>
+
+		<a href="{% url 'applicants:update-medical' %}" class="bg-white text-black rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
+			<img src="{% static 'images/syringe.svg' %}" alt="" />
+			Medical {% if medical.is_completed %}
+			<i class="bi bi-check2 text-success"></i>
+			{% else %}
+			<i class="bi bi-x-lg text-danger"></i>
+			{% endif %}
+		</a>
+
+		<a href="#" class="bg-white text-black rounded-2 py-2 px-3 d-flex align-items-center gap-2 shadow-sm">
+			<img src="{% static 'images/camera.svg' %}" alt="" />
+			Profile Picture {% if request.user.profile.profile_picture %}
+			<i class="bi bi-check2 text-success"></i>
+			{% else %}
+			<i class="bi bi-x-lg text-danger"></i>
+			{% endif %}
+		</a>
+	</div>
+	<a href="{% url 'applicants:manage-profile' %}" class="btn text-white rounded-0 fs-6 mt-5 px-4" style="background-color: #33cc99">Manage Profile</a>
+</div> -->
